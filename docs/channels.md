@@ -3,7 +3,7 @@ title: "Channels and monitoring"
 description: "Per-channel promiscuous mode and squelch, an analog monitor key, and channel toggles"
 ---
 
-## Promiscuous
+## Per-channel promiscuous
 
 Promiscuous mode (called Digi Moni in stock firmware) is stored with
 each channel in reFW, so switching channels switches it too. Each
@@ -25,7 +25,7 @@ force at that moment (see [Squelch](#squelch)).
 The list of items comes from the changelog for build
 `REFW-20260919-155710`; their storage was checked on a radio.
 
-## Moni key
+## Promiscuous
 
 Makes the Promiscuous key useful on analog channels. On stock firmware,
 pressing it on an analog channel doesn't do much. With this setting on,
@@ -33,7 +33,7 @@ pressing Promiscuous on analog toggles the squelch fully open, so you
 get an analog monitor key without giving up another programmable
 button.
 
-- **Menu:** Settings → Extras → Moni key
+- **Menu:** Settings → Extras → Promiscuous
 - **Options:** `Off`, `On`
 - **Default:** `Off`
 - **Storage:** reFW settings block `0x02E80000` + `0x10`, bit 5

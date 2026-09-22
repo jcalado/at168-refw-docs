@@ -23,7 +23,7 @@ them. Three open sub-screens: Band mode, Scan range and Hold times.
 | [Low battery](power.md#low-battery) | Whether the low-battery warning can be dismissed | Locked / Skippable | Locked |
 | [Faster](display.md#faster) | Speed of the marquee / alternating text cycle | Off / On | Off |
 | [Select 1st](calls.md#select-1st) | Move "Select" to the top of contact lists | Off / On | Off |
-| [Moni key](channels.md#moni-key) | Promiscuous key also toggles squelch on analog | Off / On | Off |
+| [Promiscuous](channels.md#promiscuous) | Promiscuous key also toggles squelch on analog | Off / On | Off |
 | [LP1 silent](keys.md#lp1-silent) | Silence the extra-long-press beep | Off / On | Off |
 | [Extra remap](keys.md#extra-remap) | Make number-key long presses and `#` remappable | Off / On | Off |
 | [VFO marker](display.md#vfo-marker) | Mark the active VFO in dual-VFO mode | Off / On | Off |

@@ -61,7 +61,7 @@ before and after.
 | 2 | [Low battery](power.md#low-battery) | 0 = Locked, 1 = Skippable | Matches radio |
 | 3 | [Faster](display.md#faster) | 0 = Off, 1 = On | Matches radio |
 | 4 | [Select 1st](calls.md#select-1st) | 0 = Off, 1 = On | Matches radio |
-| 5 | [Moni key](channels.md#moni-key) | 0 = Off, 1 = On | Matches radio |
+| 5 | [Promiscuous](channels.md#promiscuous) | 0 = Off, 1 = On | Matches radio |
 | 6 | [LP1 silent](keys.md#lp1-silent) | 0 = Off, 1 = On | Matches radio |
 | 7 | [Extra remap](keys.md#extra-remap) | 0 = Off, 1 = On | Matches radio |
 
@@ -165,10 +165,11 @@ usually succeeds.
 ## Per-channel settings
 
 reFW's per-channel settings ([promiscuous and
-squelch](channels.md#promiscuous)) live in each channel's 64-byte **channel extension** record, which sits
-`0x2000` after the channel's own record (channel *n* in bank *n* / 128,
-slot *n* % 128; banks are `0x40000` apart from `0x00800000`). The RX
-group stays in the stock channel record.
+squelch](channels.md#per-channel-promiscuous)) live in each channel's
+64-byte **channel extension** record, which sits `0x2000` after the
+channel's own record (channel *n* in bank *n* / 128, slot *n* % 128;
+banks are `0x40000` apart from `0x00800000`). The RX group stays in the
+stock channel record.
 
 | Setting | Location | Values |
 | --- | --- | --- |

@@ -9,8 +9,8 @@ of others. These were checked against the firmware image of build
 
 **Digi Moni is now Promiscuous.** The function and its shortcut behave
 the same, apart from now being [stored per
-channel](channels.md#promiscuous). The Extras item that extends it is
-still called [Moni key](channels.md#moni-key).
+channel](channels.md#per-channel-promiscuous). The Extras item that
+extends it is also called [Promiscuous](channels.md#promiscuous).
 
 **Radio Set groups** have new names:
 
