@@ -1,0 +1,20 @@
+{
+  "name": "at168-refw-docs",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "prebuild": "node scripts/page-tables.mjs --check",
+    "build": "astro build",
+    "preview": "astro preview",
+    "pages": "node scripts/page-tables.mjs"
+  },
+  "dependencies": {
+    "@astrojs/markdown-satteri": "^0.4.1",
+    "@astrojs/starlight": "^0.42.2",
+    "astro": "^7.3.3",
+    "satteri": "^0.10.5",
+    "sharp": "^0.35.4",
+    "starlight-links-validator": "^0.26.0"
+  }
+}

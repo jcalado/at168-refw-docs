@@ -1,0 +1,10 @@
+# Editor / OS noise
+.DS_Store
+*~
+.idea/
+.vscode/
+
+# Astro
+node_modules/
+dist/
+.astro/
