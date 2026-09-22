@@ -10,7 +10,7 @@ is described.
 
 | Function | Code | What it does |
 | --- | --- | --- |
-| [Slot Suit](channels.md#slot-suit) | 58 | Swap the channel between slot 1 and slot 2 |
+| [Slot Suit](channels.md#slot-suit) | 58 | Smart time slot management: monitor both slots, on ↔ off |
 | [Bandwidth](channels.md#bandwidth) | 59 | Analog channel bandwidth, 25 kHz ↔ 12.5 kHz |
 | [TX idle](calls.md#tx-idle) | 60 | Fall back to the other time slot when yours is busy |
 | [Night mode](display.md#night-mode) | 61 | Dimmed screen |

@@ -67,12 +67,16 @@ It does nothing on a DMR channel.
 
 ## Slot Suit
 
-Swaps the current channel between **slot 1** and **slot 2**. Useful
-when a repeater or talkgroup is on the opposite slot from what was
-programmed, avoiding channel edit just to listen.
+Smart time slot management, switched on or off with one key. While it
+is on, the radio monitors both **slot 1** and **slot 2** on a DMR
+channel, without needing [promiscuous
+mode](#per-channel-promiscuous), and manages the time slot itself: you
+can't pick or swap the slot directly.
 
-The swap is temporary: changing channel or power-cycling the radio puts
-the channel back on its programmed slot.
+> [!NOTE]
+> **Unconfirmed:** which slot a call you make goes out on while Slot
+> Suit is on, and whether the setting is kept when you change channel
+> or power-cycle the radio.
 
 Slot Suit is a stock AnyTone function, not a reFW addition. Factory
 firmware has it (the V1.05 image contains the label) but only offers it
