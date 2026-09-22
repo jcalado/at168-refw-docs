@@ -73,13 +73,20 @@ channel, without needing [promiscuous
 mode](#per-channel-promiscuous), and manages the time slot itself: you
 can't pick or swap the slot directly.
 
-> [!NOTE]
-> **Unconfirmed:** which slot a call you make goes out on while Slot
-> Suit is on, and whether the setting is kept when you change channel
-> or power-cycle the radio.
+While Slot Suit is on, each incoming call sets the time slot the radio
+uses to the slot that call arrived on, overriding the channel's
+programmed slot. It stays on that slot until a call arrives on the
+other one, or you make a call. When no call has set it, the radio uses
+the channel's slot.
+
+Making a call clears it back to the channel's slot. The [hold
+time](calls.md#hold-times) keeps its own record of the slot, though, so
+calls you make while the hold is running still go out on the slot of
+the call you heard. Once the hold expires, the channel's slot applies
+again.
 
 Slot Suit is a stock AnyTone function, not a reFW addition. Factory
-firmware has it (the V1.05 image contains the label) but only offers it
+firmware has it (the V1.05 image contains the label) but only enables it
 on Chinese-market models. reFW makes it assignable on the others too.
 
 - **Menu:** a [key function](keys.md#assigning-functions-to-keys),
