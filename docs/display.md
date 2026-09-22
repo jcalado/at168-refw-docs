@@ -57,9 +57,9 @@ palette.
 
 ## Light time
 
-Toggles the backlight timeout between **always on** and **15 seconds**
-with one key. Useful to keep the display illuminated at a desk, then
-switch back to a timeout when carrying the radio.
+Toggles the backlight between **always on** and your previous backlight
+timeout with one key. Useful to keep the display illuminated at a desk,
+then switch back to your usual timeout when carrying the radio.
 
 - **Menu:** a [key function](keys.md#assigning-functions-to-keys),
   code 62

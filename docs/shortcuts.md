@@ -14,7 +14,7 @@ is described.
 | [Bandwidth](channels.md#bandwidth) | 59 | Analog channel bandwidth, 25 kHz ↔ 12.5 kHz |
 | [TX idle](calls.md#tx-idle) | 60 | Fall back to the other time slot when yours is busy |
 | [Night mode](display.md#night-mode) | 61 | Dimmed screen |
-| [Light time](display.md#light-time) | 62 | Backlight timeout, always on ↔ 15 s |
+| [Light time](display.md#light-time) | 62 | Backlight, always on ↔ your previous timeout |
 | [APRS type](channels.md#aprs-type) | 63 | APRS on or off for the current channel |
 | [MAT3](mat3.md#mat3-key-function) | 64 | MAT3 USB streaming, enabled ↔ disabled |
 | [RX Group](calls.md#rx-groups) | 65 | Deselect the channel's RX group |
