@@ -43,10 +43,12 @@ changes what that specific key press does.
 
 ## Squelch
 
-The squelch level is also stored with each channel. A channel either
-follows the radio's global squelch or uses its own level. Changing only
-promiscuous on a channel switches on its own squelch override, at the
-level in force at that moment.
+The squelch level is stored with each channel; reFW has no global
+squelch level. Changing only promiscuous on a channel also saves the
+squelch level in force at that moment to the channel.
+
+What the radio uses on a channel that has never had a squelch level
+saved is `Not yet documented`.
 
 - **Storage:** the channel's extension record. See
   [settings-storage.md](settings-storage.md#per-channel-settings).

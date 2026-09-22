@@ -177,8 +177,8 @@ stock channel record.
 | Promiscuous → ID Option | extension `+0x04`, bit 2 | 0 = Any Id, 1 = Same Id |
 | Promiscuous → CC Option | extension `+0x04`, bit 3 | 0 = Any CC, 1 = Same CC |
 | Slot hold | extension `+0x04`, bit 4 | 0 = Off, 1 = On |
-| Squelch level | extension `+0x09`, bits 0–2 | level, used only while bit 3 is set |
-| Squelch override | extension `+0x09`, bit 3 | 0 = follow the global squelch, 1 = use this channel's level |
+| Squelch level | extension `+0x09`, bits 0–2 | level |
+| Squelch flag | extension `+0x09`, bit 3 | 1 = the channel has a saved level; 0 is `Not yet documented` (reFW has no global squelch) |
 | RX group | channel `+0x1C` | group-list index, `0xFF` = none |
 
 Checked on a radio running `REFW-20260919-155710` on 2026-09-21, on
@@ -186,13 +186,13 @@ channels 169 (`CQ0DMS TS1`) and 211 (`LX`), by diffing full codeplug
 reads:
 
 - Promiscuous Off → Single Slot changed extension `+0x04` from `00` to
-  `01`. It also wrote `+0x09` = `09` (level 1, override on), matching VFO
+  `01`. It also wrote `+0x09` = `09` (level 1, flag set), matching VFO
   A's squelch of 1, though the squelch wasn't touched.
 - Promiscuous Single → Double Slot with Slot hold turned on changed
   `+0x04` from `01` to `12`.
 - Clearing the RX group changed channel `+0x1C` from `0` to `0xFF`.
 - On channel 211 (`LX`), changing the squelch from 2 to 4 changed
-  extension `+0x09` from `0A` to `0C` (override already on).
+  extension `+0x09` from `0A` to `0C` (flag already set).
 - Setting CC Option to Same CC and ID Option to Same Id together changed
   `+0x04` from `10` to `1C`. Which bit is which comes from the firmware:
   the channel-edit menu reads CC Option from bit 3 of that byte.
