@@ -14,7 +14,7 @@ and fixes bugs across the rest of the radio.
 </p>
 
 The same pages are published as a searchable site at
-<https://jcalado.github.io/at168-refw-docs/>.
+<https://jcalado.com/at168-refw-docs/>.
 
 ## What's Here
 

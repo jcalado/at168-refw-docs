@@ -11,7 +11,7 @@ import { sidebar } from './src/pages.mjs';
 const base = '/at168-refw-docs';
 
 export default defineConfig({
-	site: 'https://jcalado.github.io',
+	site: 'https://jcalado.com',
 	base,
 	markdown: {
 		processor: satteri({ mdastPlugins: [mdLinks({ base }), githubAlerts(), validatorSlugs()] }),
