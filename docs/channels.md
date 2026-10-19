@@ -1,6 +1,6 @@
 ---
 title: "Channels and monitoring"
-description: "Per-channel promiscuous mode and squelch, an analog monitor key, and channel toggles"
+description: "Per-channel promiscuous, squelch and options, a monitor key, Copy 2 VFO, and channel toggles"
 ---
 
 ## Per-channel promiscuous
@@ -41,6 +41,16 @@ button.
 This logic is evaluated inside the Promiscuous key routine, so it only
 changes what that specific key press does.
 
+On reFW the Promiscuous key itself is a single toggle monitor on both
+digital and analog channels: one press turns it on, the next turns it
+off, with no need to hold the key. Stock firmware only toggles digital
+promiscuous with it. The stock AnyTone CPS calls this key function
+**Digital Monitor**.
+
+> [!NOTE]
+> Whether the key still needs this Extras setting to act as a monitor
+> on analog channels is `Unconfirmed`.
+
 ## Squelch
 
 The squelch level is stored with each channel; reFW has no global
@@ -79,6 +89,9 @@ programmed slot. It stays on that slot until a call arrives on the
 other one, or you make a call. When no call has set it, the radio uses
 the channel's slot.
 
+With two [RX group](calls.md#rx-groups) talkgroups active on different
+slots, the display alternates between them.
+
 Making a call clears it back to the channel's slot. The [hold
 time](calls.md#hold-times) keeps its own record of the slot, though, so
 calls you make while the hold is running still go out on the slot of
@@ -100,3 +113,41 @@ changing APRS settings elsewhere in the codeplug.
 
 - **Menu:** a [key function](keys.md#assigning-functions-to-keys),
   code 63
+
+## Channel options
+
+Each channel's edit menu has these items, alongside
+[Promiscuous](#per-channel-promiscuous):
+
+- `Call ACK`: call confirmation. Stock firmware only lets you set this
+  from CPS.
+- `SMS ACK`: sends an acknowledgement for a received message. This is
+  separate from SMS Forbid.
+- `Auto scan`: starts auto scan straight away. It runs on the main
+  screen only.
+- `Trunking`: an empty menu for now.
+
+- **Menu:** the channel's edit menu. The exact path is `Not yet
+  documented`.
+- **Options:** `Not yet documented`
+- **Default:** `Not yet documented`
+- **Storage:** `Not yet documented`
+
+## Copy 2 VFO
+
+Copies the current memory channel to the VFO and switches to VFO mode.
+
+The VFO channel is not saved to flash straight away. It is written
+eventually, when a later action triggers a flash save.
+
+- **Menu:** a [key function](keys.md#assigning-functions-to-keys),
+  code `Not yet documented`
+
+## Using AnyTone's CPS
+
+AnyTone's own CPS still works with a reFW radio for now, but may not in
+future. A read followed by a write loses reFW's per-channel settings
+([promiscuous](#per-channel-promiscuous) and [squelch](#squelch)),
+because reFW keeps them in the channel extension records (see
+[settings-storage.md](settings-storage.md#per-channel-settings)).
+reFW's Extras settings live separately and are not affected.

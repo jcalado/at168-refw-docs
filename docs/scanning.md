@@ -22,8 +22,8 @@ example `136.00000`).
 This adds no storage of its own: the four limits are the stock CPS-only
 VFO scan range fields.
 
-- **Menu:** Settings → Extras → Scan range, a sub-menu with the four
-  items above
+- **Menu:** Settings → Radio Set → Misc → Scan range, a sub-menu
+  with the four items above
 - **Storage:** 4 bytes each, a little-endian u32 in units of 10 Hz.
   Checked on a radio running `REFW-20260919-155710` on 2026-09-21:
   VHF Start 136.00000 → 144.12345 MHz changed `0x60`–`0x63` from
@@ -46,6 +46,11 @@ through **Mode 17**.
 - **Storage:** *Not stored in the codeplug!* This lives in byte `+3` of
   the flash device-info block at address `0x02FA0000` (making its
   physical address `0x02FA0003`).
+
+Stock forces Band 0 and wipes the codeplug when Band is 14 and the
+model name doesn't start with `168#`. reFW removes this, so Mode 14
+behaves like any other band mode (see
+[Bug fixes](bug-fixes.md)).
 
 > [!WARNING]
 > The device-info sector stores radio calibration and identity data. The

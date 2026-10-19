@@ -29,9 +29,9 @@ every item and link to where it is described.
 | Page | Description |
 | --- | --- |
 | [Display and indicators](display.md) | Idle screen options, backlight and dimming shortcuts, and new icons |
-| [Keys and navigation](keys.md) | Assigning functions to keys, number-key and # shortcuts, the knob, and faster menu entry |
-| [Calls, contacts and RX groups](calls.md) | Contact list shortcuts, call hold times, time slot fallback, RX groups and manual dial |
-| [Channels and monitoring](channels.md) | Per-channel promiscuous mode and squelch, an analog monitor key, and channel toggles |
+| [Keys and navigation](keys.md) | Assigning functions to keys, number-key and # shortcuts, what the knob and up/down keys select, and faster menu entry |
+| [Calls, contacts and RX groups](calls.md) | Contact list shortcuts, call hold times and exclusive hold, time slot fallback, RX groups and manual dial |
+| [Channels and monitoring](channels.md) | Per-channel promiscuous, squelch and options, a monitor key, Copy 2 VFO, and channel toggles |
 | [Scanning and band limits](scanning.md) | VFO scan limits and changing the radio's band mode from the menu |
 | [Power and battery](power.md) | Battery voltage display, a dismissable low-battery warning, and USB charging control |
 | [FM radio and clock](fm-radio-and-clock.md) | RDS on the broadcast FM receiver, and setting the clock from a PC |

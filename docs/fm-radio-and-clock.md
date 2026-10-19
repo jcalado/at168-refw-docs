@@ -10,7 +10,8 @@ description: "RDS on the broadcast FM receiver, and setting the clock from a PC"
 
 ## FM radio RDS
 
-The broadcast FM receiver decodes RDS.
+The broadcast FM receiver decodes RDS. The reFW developer has
+improved how reliably it decodes (October 2026).
 
 ## Clock sync
 

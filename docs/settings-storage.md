@@ -9,8 +9,8 @@ flash and in the codeplug.
 On current builds, reFW keeps almost all of its own settings in a
 512-byte **reFW settings block** in flash at `0x02E80000`, outside the
 codeplug. A codeplug read or write does not touch it. The exceptions are
-Extras items that just expose a stock setting, which stay in the stock
-codeplug field (see [below](#stock-fields-exposed-in-extras)).
+menu items that just expose a stock setting, which stay in the stock
+codeplug field (see [below](#stock-fields-exposed-in-the-menu)).
 
 Everything on this page was checked on a radio running
 `REFW-20260919-155710` on 2026-09-21, by reading the block and the
@@ -31,9 +31,10 @@ image.
 | `0x4B`-`0x1FF` | | Not yet documented (zero on the test radio) |
 
 The firmware loads the block into RAM at startup and writes all 512
-bytes back whenever a setting changes. If the block doesn't start with
-`REFW`, reFW treats it as blank: it zeroes the block, writes the tag,
-sets `0 Long` to `16` (Dial), and saves it. So a fresh install starts
+bytes back whenever a setting changes. Settings are only written to
+flash when their value actually changes. If the block doesn't start
+with `REFW`, reFW treats it as blank: it zeroes the block, writes the
+tag, sets `0 Long` to `16` (Dial), and saves it. So a fresh install starts
 with every flag at `0` and every other key function at `0` (OFF).
 
 reFW keeps a second copy, bank B, at `0x02EA0000`. Each bank has status
@@ -46,18 +47,18 @@ live, marks it live, and retires the other.
 On the test radio both banks were marked live and neither was retired,
 so the firmware loads bank A. Writing the 512 bytes of bank A through the
 normal program-mode protocol works: on 2026-09-21 an `at168-cps` write
-changed Knob mode, MAT3 and Show cont, and the radio booted with all
-three. Tools should write **bank A only** and never touch either bank's
-status words. Program-mode reads of bank B aren't a reliable view of it:
-the same address read as a clean copy of A once, and as unrelated bytes
-before and after.
+changed three settings, including MAT3 and Show cont, and the radio
+booted with all three. Tools should write **bank A only** and never
+touch either bank's status words. Program-mode reads of bank B aren't a
+reliable view of it: the same address read as a clean copy of A once,
+and as unrelated bytes before and after.
 
 ### `0x10`: Extras flags, byte 1
 
 | Bit | Extras item | Values | Evidence |
 | --- | --- | --- | --- |
 | 0 | [Batt view](power.md#batt-view) | 0 = Icon, 1 = Voltage | Matches radio |
-| 1 | [Knob mode](keys.md#knob-mode) | 0 = Channel, 1 = Zone | Flip-tested |
+| 1 | `Not yet documented` | | |
 | 2 | [Low battery](power.md#low-battery) | 0 = Locked, 1 = Skippable | Matches radio |
 | 3 | [Faster](display.md#faster) | 0 = Off, 1 = On | Matches radio |
 | 4 | [Select 1st](calls.md#select-1st) | 0 = Off, 1 = On | Matches radio |
@@ -80,8 +81,7 @@ before and after.
 - **Flip-tested:** changing the setting on the radio changed only this
   bit, and it survived a power cycle.
 - **Matches radio:** the bit agrees with what the radio's menu showed,
-  from a single reading. The order and the firmware's menu code
-  (item *n* reads bit *n*) back this up.
+  from a single reading. The firmware's menu code backs this up.
 - **Firmware:** read from the `REFW-20260919-155710` code that uses the
   bit (USB charge sits next to the battery-voltage checks, Packet log
   gates the log flush), not yet observed on a radio.
@@ -96,8 +96,9 @@ Offsets `0x40`-`0x4A` each hold one key-function code: `0x40` for the
 radio: all four keys that were assigned read back as the codes of the
 functions the menu showed.
 
-Codes index a 66-entry function table (`0..65`). `0..57` are the stock
-functions. reFW adds:
+Codes index a function table whose size in current builds is `Not yet
+documented`: it has more than the 66 entries (`0..65`) of
+`REFW-20260919-155710`. `0..57` are the stock functions. reFW adds:
 
 | Code | Function |
 | --- | --- |
@@ -109,6 +110,8 @@ functions. reFW adds:
 | 63 | [APRS Type](channels.md#aprs-type) |
 | 64 | [MAT3](mat3.md#mat3-key-function) |
 | 65 | [RX Group](calls.md#rx-groups) |
+| `Not yet documented` | [Exclusive](calls.md#exclusive-hold) |
+| `Not yet documented` | [Copy 2 VFO](channels.md#copy-2-vfo) |
 
 At startup reFW resets any of these eleven bytes above `65` (`0x41`):
 `0 Long` goes back to `16` and the rest to `0`. Tools should still
@@ -117,17 +120,19 @@ is `Not yet documented`, and the startup reset only runs at boot.
 
 ## Not in the stock codeplug area
 
-None of reFW's own settings live in `general_settings`. Changing Knob
-mode and MAT3 on the radio changed the reFW block and no codeplug byte,
-and the block's startup code never reads the codeplug. Bytes `0xEB` and
-`0xEF` of `general_settings` are not reFW settings.
+None of reFW's own settings live in `general_settings`. Changing MAT3
+and another Extras flag on the radio changed the reFW block and no
+codeplug byte, and the block's startup code never reads the codeplug.
+Bytes `0xEB` and `0xEF` of `general_settings` are not reFW settings.
 
-## Stock fields exposed in Extras
+## Stock fields exposed in the menu
 
-Some Extras items don't add storage. They put a stock CPS-only setting
-into the radio's menu, and the value stays in the stock codeplug field:
+Some reFW menu items don't add storage. They put a stock CPS-only
+setting into the radio's menu, and the value stays in the stock
+codeplug field. Show cont is in Settings → Radio Set → Display; Hold
+times and Scan range are in Settings → Radio Set → Misc.
 
-| Extras item | Stock field | Location |
+| Menu item | Stock field | Location |
 | --- | --- | --- |
 | [Show cont](display.md#show-cont) | `show_current_contact` | `general_settings` + `0xB9`, bit 0 (0 = Off, 1 = On) |
 | [Hold times](calls.md#hold-times) → Private | `private_call_hang_time` | `general_settings` + `0x1A` |
@@ -199,5 +204,17 @@ reads:
 
 ## Unmapped
 
-Every Extras item's storage is now mapped. PF-key assignments in the
-Keys menu have not been checked against the reFW block yet.
+Every Extras item's storage is mapped. These settings have no known
+storage yet:
+
+| Setting | Where it is | Storage |
+| --- | --- | --- |
+| [Knob select](keys.md#knob-select) → Knob | Settings → Radio Set → Keys | `Not yet documented` |
+| [Knob select](keys.md#knob-select) → Up/Down | Settings → Radio Set → Keys | `Not yet documented` |
+| [Night mode](display.md#night-mode-timer) timer | Settings → Radio Set → Display (`Unconfirmed`) | `Not yet documented` |
+| [Call ACK](channels.md#channel-options) | Per channel | `Not yet documented` |
+| [SMS ACK](channels.md#channel-options) | Per channel | `Not yet documented` |
+| [Auto scan](channels.md#channel-options) | Per channel | `Not yet documented` |
+
+PF-key assignments in the Keys menu have not been checked against the
+reFW block yet.

@@ -17,7 +17,9 @@ is described.
 | [Light time](display.md#light-time) | 62 | Backlight, always on ↔ your previous timeout |
 | [APRS type](channels.md#aprs-type) | 63 | APRS on or off for the current channel |
 | [MAT3](mat3.md#mat3-key-function) | 64 | MAT3 USB streaming, enabled ↔ disabled |
-| [RX Group](calls.md#rx-groups) | 65 | Deselect the channel's RX group |
+| [RX Group](calls.md#rx-groups) | 65 | Open the channel's RX group list |
+| [Exclusive](calls.md#exclusive-hold) | `Not yet documented` | Make the current hold exclusive |
+| [Copy 2 VFO](channels.md#copy-2-vfo) | `Not yet documented` | Copy the current channel to the VFO and switch to it |
 
 Slot Suit is a stock function that reFW unlocks on radios where AnyTone
 hid it; the others are new.
@@ -26,19 +28,20 @@ The functions are mostly **toggles**: one press flips the setting,
 another press flips it back. Most act on the radio's live state rather
 than the codeplug, so the current channel behaves differently without
 you having to go in and edit it. MAT3 is the exception: it changes the
-stored Extras setting. RX Group's exact behaviour is still
-`Unconfirmed`.
+stored Extras setting. RX Group and Copy 2 VFO aren't toggles: one
+opens a list, the other copies the channel.
 
 ## Storage
 
 Each key assignment is one byte holding a function code. The codes
 above come from the function table in `REFW-20260919-155710`, checked on
-a radio for Light Time.
-
-`0..57` are the stock functions, so the table now has 66 entries. The
-`#` and number-key assignments live in reFW's settings block, not the
-codeplug; see
-[settings-storage.md](settings-storage.md#key-functions). PF-key
-assignments haven't been checked against the block. A CPS should only
-offer codes `0..65`; whether the key dispatcher bounds-checks the code is
+a radio for Light Time. The codes for Exclusive and Copy 2 VFO are
 `Not yet documented`.
+
+`0..57` are the stock functions. The table now has more entries than
+the `0..65` listed above; its size is `Not yet documented`. The `#` and
+number-key assignments live in reFW's settings block, not the codeplug;
+see [settings-storage.md](settings-storage.md#key-functions). PF-key
+assignments haven't been checked against the block. A CPS should only
+offer codes it knows; whether the key dispatcher bounds-checks the code
+is `Not yet documented`.

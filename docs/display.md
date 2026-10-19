@@ -23,9 +23,10 @@ enabled.
 This is not a new reFW setting. It is the stock **Show current
 contact** option, which factory firmware only lets you set from CPS
 (hence the changelog's "CPS-only option: Show Contact"). reFW adds it
-to the radio's menu as Extras item 12.
+to the radio's Display menu. [Faster](#faster) stays in Extras and
+still sets how fast Show cont alternates.
 
-- **Menu:** Settings → Extras → Show cont
+- **Menu:** Settings → Radio Set → Display → Show cont
 - **Options:** `Off`, `On`
 - **Default:** `Unconfirmed` for a factory-fresh radio. The template in
   `at168-cps` (work in progress, not yet released) sets it `On`.
@@ -55,6 +56,17 @@ palette.
 - **Menu:** a [key function](keys.md#assigning-functions-to-keys),
   code 61
 
+### Night mode timer
+
+Sets how long the screen stays bright after a key press while night
+mode is on, up to 30 seconds. This reading of the option is
+`Unconfirmed`.
+
+- **Menu:** Settings → Radio Set → Display (`Unconfirmed`)
+- **Options:** `Not yet documented`, up to 30 s
+- **Default:** `Not yet documented`
+- **Storage:** `Not yet documented`
+
 ## Light time
 
 Toggles the backlight between **always on** and your previous backlight
@@ -67,13 +79,26 @@ then switch back to your usual timeout when carrying the radio.
 ## Other display changes
 
 > [!NOTE]
-> These come from the changelog for build `REFW-20260919-155710`. Their
-> exact behavior has **not yet been documented** from a radio.
+> The first six items come from the changelog for build
+> `REFW-20260919-155710`; the rest come from the reFW developer in
+> October 2026. Their exact behavior has **not yet been documented**
+> from a radio.
 
 - **Bandwidth icon** on analog channels.
 - **G icon** when an RX group is selected.
 - **New icon** for scrambled/encrypted channels.
-- **Promiscuous icon** now reflects the setting of the current VFO only.
-- **Satellite pass list** no longer shows seconds.
-- **Talker Alias** handling was rewritten. Incoming aliases get limited
-  UTF-8 support, and the random Chinese and garbage characters are gone.
+- **Promiscuous icon** reflects the setting of the current VFO only.
+- **Satellite pass list** doesn't show seconds.
+- **Talker Alias** handling was rewritten. Incoming aliases use a
+  limited set of UTF-8 characters, with no random Chinese or garbage
+  characters. There is no emoji, and many accented letters are missing
+  from the font: each shows as `?` ("Loïc" shows as "Lo?c").
+  Unsupported symbols show as `???`.
+- **New icons** for [Slot Suit](channels.md#slot-suit) and [TX
+  idle](calls.md#tx-idle).
+- **Cyan** means a hold is active.
+- **`DIG` indicator** turns red while a hold is active.
+- **Time slot** shows in red during a hold on a manually dialled call.
+  The T1/T2 indicator doesn't change for Slot Suit or TX Idle yet.
+- **Red channel indicator** during an [exclusive
+  hold](calls.md#exclusive-hold).

@@ -8,6 +8,10 @@ later. It is a debugging and curiosity tool: nothing on the radio reads
 the log back, and nothing the radio does depends on it. To watch traffic
 live instead, use [MAT3](mat3.md).
 
+> [!NOTE]
+> Packet log is in current development builds but will not ship in the
+> first public reFW release.
+
 ## Turning it on
 
 When on, packet headers and metadata are written sequentially to a

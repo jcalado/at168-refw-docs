@@ -1,6 +1,6 @@
 ---
 title: "Keys and navigation"
-description: "Assigning functions to keys, number-key and # shortcuts, the knob, and faster menu entry"
+description: "Assigning functions to keys, number-key and # shortcuts, what the knob and up/down keys select, and faster menu entry"
 ---
 
 ## Assigning functions to keys
@@ -28,19 +28,18 @@ key** can trigger custom actions.
 Here is how the `#` key mapping works in memory:
 
 - **Storage (enable):** reFW settings block `0x02E80000` + `0x10`, bit
-  7. When enabled, pressing `#` runs your custom shortcut instead of the
-  stock save-channel routine. The radio also exposes a new **Hash
-  Short** entry under **Settings → Radio Set → Keys**, next to new **0
-  Long** … **9 Long** entries for the number keys.
+  7. The radio also exposes a new **Hash Short** entry under **Settings
+  → Radio Set → Keys**, next to new **0 Long** … **9 Long** entries for
+  the number keys.
 - **Storage (functions):** reFW settings block `0x02E80000` + `0x40` for
   Hash Short, then `0x41` … `0x4A` for `0 Long` … `9 Long`. Each byte is
-  a key-function code from `0` to `65`; see
+  a key-function code; see
   [settings-storage.md](settings-storage.md#key-functions) for the
   codes.
 
-Keep in mind that functions requiring a sustained press-and-hold (such
-as Sub PTT, Alarm, Monitor, or TBST Send) can technically be mapped to
-`#`, but won't do anything useful on a short tap.
+The `#` key has no stock function left in reFW: its short press only
+runs the shortcut you assign to Hash Short. There is no long press on
+`#`.
 
 ## LP1 silent
 
@@ -53,18 +52,32 @@ triggered. Turning this on silences the confirmation beep.
 - **Default:** `Off`
 - **Storage:** reFW settings block `0x02E80000` + `0x10`, bit 6
 
-## Knob mode
+## Knob select
 
-Swaps what the top rotary knob and the up/down keys do on the idle
-screen. One of them steps through **Channels** in the active zone and
-the other through **Zones**. This setting picks which does which.
+Picks what the top rotary knob and the up/down keys step through on
+the idle screen. Each one is set on its own, and both can step through
+the same thing: for example, the up/down keys for channels and the
+knob for talkgroups.
 
-- **Menu:** Settings → Extras → Knob mode
-- **Options:** `Channel`, `Zone`
-- **Default:** `Zone`
-- **Storage:** reFW settings block `0x02E80000` + `0x10`, bit 1 (`0` =
-  Channel, `1` = Zone). Flip-tested on a radio running
-  `REFW-20260919-155710` on 2026-09-21.
+- **Menu:** Settings → Radio Set → Keys → Knob and Up/Down (the last
+  two items in the Keys menu)
+- **Options:** zone, channel or contact (the exact wording on the
+  radio is `Not yet documented`)
+- **Default:** `Not yet documented`
+- **Storage:** `Not yet documented`
+
+Contact steps only through the talkgroups in the channel's
+[RX group](calls.md#rx-groups). On a channel with no RX group it does
+nothing. When you change channel or VFO, the contact goes back to the
+channel's own contact.
+
+Scanning and WFM take over the knob while they run, and the knob does
+nothing on the call screen.
+
+## PTT lock
+
+When the keypad is locked, PTT is locked too. There is no setting for
+this.
 
 ## Menu navigation and entry
 
@@ -76,3 +89,6 @@ the other through **Zones**. This setting picks which does which.
 - **Jump by value.** Typing an option's value on the keypad jumps
   straight to that option.
 - **DCS codes can be typed in directly** instead of scrolled to.
+
+PF1 is also handled better when backing out of editors and when
+scrolling up while already at the top of a list.
