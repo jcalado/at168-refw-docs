@@ -21,6 +21,9 @@ extends it is also called [Promiscuous](channels.md#promiscuous).
 | `DISP Func` | `Display` |
 | `Other Func` | `Misc` |
 
+![The Radio Set menu: Audio, Display, Keys and
+Misc](./images/radio-set-menu.png)
+
 So key assignments now live under **Settings → Radio Set → Keys**. That
 group also gains `Hash Short` and `0 Long` … `9 Long` for
 [number-key and `#` shortcuts](keys.md#number-key-and--shortcuts),

@@ -13,6 +13,19 @@ description: "RDS on the broadcast FM receiver, and setting the clock from a PC"
 The broadcast FM receiver decodes RDS. The reFW developer has
 improved how reliably it decodes (October 2026).
 
+With the FM radio on, the lower half of the screen (VFO B, which was
+the selected side) shows the frequency in large digits, with the
+station name from RDS under it. Whether it moves to the upper half
+when VFO A is selected is `Not yet documented`.
+
+![The FM radio on 94.30 MHz, with the RDS station name ANTENA 2 under
+the frequency](./images/fm-radio-rds.png)
+
+Checked on a radio on 29 October 2026, tuned to 94.30 MHz. The station
+name stayed on screen without scrolling or changing over 12 seconds,
+and no other RDS text (such as RadioText) appeared. Whether reFW shows
+RadioText, clock time or other RDS data is `Not yet documented`.
+
 ## Clock sync
 
 The real-time clock can be set from a PC. `at168-cps` does this from its

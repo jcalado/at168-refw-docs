@@ -53,15 +53,24 @@ palette.
 - **Menu:** a [key function](keys.md#assigning-functions-to-keys),
   code 61
 
+The Display menu also has a `Night Mode` item (item 2). Whether it is
+the same setting as this key function is `Not yet documented`.
+
 ### Night mode timer
 
 Sets how long the screen stays bright after a key press while night
 mode is on, up to 30 seconds. This reading of the option is
 `Unconfirmed`.
 
-- **Menu:** Settings → Radio Set → Display (`Unconfirmed`)
-- **Options:** `Not yet documented`, up to 30 s
-- **Default:** `Not yet documented`
+![The Display menu in Radio Set, items 1 to 5: Back Light, Night Mode,
+Night Timer, Light Time and Ch.Name](./images/display-menu-top.png)
+
+![The Night Timer list, opened on 2s](./images/night-timer-options.png)
+
+- **Menu:** Settings → Radio Set → Display → Night Timer (item 3)
+- **Options:** `1s` to `30s`, in 1 s steps
+- **Default:** `Not yet documented`. One radio was set to `2s` when
+  read on 29 October 2026, which may not be the factory value
 - **Storage:** `Not yet documented`
 
 ## Light time
@@ -72,6 +81,9 @@ then switch back to your usual timeout when carrying the radio.
 
 - **Menu:** a [key function](keys.md#assigning-functions-to-keys),
   code 62
+
+The Display menu also has a `Light Time` item (item 4). Whether it is
+the same setting as this key function is `Not yet documented`.
 
 ## Other display changes
 

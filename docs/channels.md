@@ -6,7 +6,8 @@ description: "The Chan Set menu, per-channel promiscuous, squelch and options, a
 ## Chan Set menu
 
 **Settings → Chan Set** edits the current channel. On reFW it has 33
-items, in this order:
+items, in this order (checked on a radio with a digital channel
+selected, 29 October 2026):
 
 | # | Item | # | Item | # | Item |
 | --- | --- | --- | --- | --- | --- |
