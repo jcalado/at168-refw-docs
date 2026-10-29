@@ -1,6 +1,6 @@
 ---
 title: "Keys and navigation"
-description: "Assigning functions to keys, number-key and # shortcuts, what the knob and up/down keys select, and faster menu entry"
+description: "Assigning functions to keys, number-key and # shortcuts, what the knob and up/down keys select, and paging through menus and jumping to an item by number"
 ---
 
 ## Assigning functions to keys

@@ -16,7 +16,7 @@ analog channel above a DMR channel, each with its channel and zone
 name, and the battery shown as a voltage in the top corner](./images/radio-home-screen.png)
 
 The home screen on reFW, with the battery shown as a voltage by
-[Bat icon](power.md#bat-icon).
+[Bat Icon](power.md#bat-icon).
 
 Standing at the radio looking at a menu? The [Extra
 menu](extras-menu.md) and [Shortcut functions](shortcuts.md) pages list
@@ -30,10 +30,10 @@ every item and link to where it is described.
 | Page | Description |
 | --- | --- |
 | [Display and indicators](display.md) | Idle screen options, backlight and dimming shortcuts, and new icons |
-| [Keys and navigation](keys.md) | Assigning functions to keys, number-key and # shortcuts, what the knob and up/down keys select, and faster menu entry |
+| [Keys and navigation](keys.md) | Assigning functions to keys, number-key and # shortcuts, what the knob and up/down keys select, and paging through menus and jumping to an item by number |
 | [Calls, contacts and RX groups](calls.md) | Contact list shortcuts, call hold times and exclusive hold, time slot fallback, RX groups and manual dial |
 | [Slot Suit](slot-suit.md) | Hearing both time slots of a DMR channel and replying on the slot each call came in on |
-| [Channels and monitoring](channels.md) | The Chan Set menu, per-channel promiscuous, squelch and options, a monitor key, Copy 2 VFO, and channel toggles |
+| [Channels and monitoring](channels.md) | The Chan Set menu on digital and analog channels, per-channel promiscuous, squelch and options, a monitor key, Copy 2 VFO, and channel toggles |
 | [Scanning and band limits](scanning.md) | VFO scan limits and changing the radio's band mode from the menu |
 | [Power and battery](power.md) | Battery voltage display, a dismissable low-battery warning, and USB charging control |
 | [FM radio and clock](fm-radio-and-clock.md) | RDS on the broadcast FM receiver, and setting the clock from a PC |
@@ -67,23 +67,3 @@ every item and link to where it is described.
 | [Settings storage](settings-storage.md) | Memory and codeplug offsets for developers building custom CPS tools |
 | [Packet log format](packet-log-format.md) | Flash layout and record format of the packet log, for tools that read it |
 <!-- /pages -->
-
-## What this site is (and isn't)
-
-These docs focus on the radio from an operator's perspective, paired
-with just enough under-the-hood storage details so folks writing
-third-party CPS or tools can reliably read and write settings.
-
-This is neither the source code for reFW nor a guide on compiling it
-from scratch.
-
-## How we document things
-
-Whenever we cover a setting, you'll find the available **options**, the
-factory **default**, and where it lands in **storage**.
-
-We value accuracy over guesswork: if something hasn't been verified on
-physical hardware or in disassembly, we explicitly label it as
-`Unconfirmed` or `Not yet documented`. If you spot something new or can
-fill in a gap, see
-[CONTRIBUTING.md](https://github.com/jcalado/at168-refw-docs/blob/main/CONTRIBUTING.md).

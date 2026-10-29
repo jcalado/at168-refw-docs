@@ -57,7 +57,7 @@ and as unrelated bytes before and after.
 
 | Bit | Setting | Values | Evidence |
 | --- | --- | --- | --- |
-| 0 | [Bat icon](power.md#bat-icon) | 0 = Icon, 1 = Voltage | Matches radio |
+| 0 | [Bat Icon](power.md#bat-icon) | 0 = Icon, 1 = Voltage | Matches radio |
 | 1 | `Not yet documented` | | |
 | 2 | [Bat warning](power.md#bat-warning) | 0 = Locked, 1 = Skippable | Matches radio |
 | 3 | [Sub text → Speed](display.md#speed) | 0 = Slow, 1 = Fast | Matches radio |

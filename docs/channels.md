@@ -1,6 +1,6 @@
 ---
 title: "Channels and monitoring"
-description: "The Chan Set menu, per-channel promiscuous, squelch and options, a monitor key, Copy 2 VFO, and channel toggles"
+description: "The Chan Set menu on digital and analog channels, per-channel promiscuous, squelch and options, a monitor key, Copy 2 VFO, and channel toggles"
 ---
 
 ## Chan Set menu
