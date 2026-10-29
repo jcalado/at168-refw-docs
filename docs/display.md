@@ -91,7 +91,7 @@ then switch back to your usual timeout when carrying the radio.
   characters. There is no emoji, and many accented letters are missing
   from the font: each shows as `?` ("Loïc" shows as "Lo?c").
   Unsupported symbols show as `???`.
-- **New icons** for [Slot Suit](channels.md#slot-suit) and [TX
+- **New icons** for [Slot Suit](slot-suit.md) and [TX
   idle](calls.md#tx-idle).
 - **Cyan** means a hold is active.
 - **`DIG` indicator** turns red while a hold is active.

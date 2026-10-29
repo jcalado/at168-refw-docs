@@ -27,6 +27,7 @@ The same pages are published as a searchable site at
 | [docs/display.md](docs/display.md) | Idle screen options, backlight and dimming shortcuts, and new icons |
 | [docs/keys.md](docs/keys.md) | Assigning functions to keys, number-key and # shortcuts, what the knob and up/down keys select, and faster menu entry |
 | [docs/calls.md](docs/calls.md) | Contact list shortcuts, call hold times and exclusive hold, time slot fallback, RX groups and manual dial |
+| [docs/slot-suit.md](docs/slot-suit.md) | Hearing both time slots of a DMR channel and replying on the slot each call came in on |
 | [docs/channels.md](docs/channels.md) | The Chan Set menu, per-channel promiscuous, squelch and options, a monitor key, Copy 2 VFO, and channel toggles |
 | [docs/scanning.md](docs/scanning.md) | VFO scan limits and changing the radio's band mode from the menu |
 | [docs/power.md](docs/power.md) | Battery voltage display, a dismissable low-battery warning, and USB charging control |

@@ -102,7 +102,7 @@ documented`: it has more than the 66 entries (`0..65`) of
 
 | Code | Function |
 | --- | --- |
-| 58 | [Slot Suit](channels.md#slot-suit) |
+| 58 | [Slot Suit](slot-suit.md) |
 | 59 | [Bandwidth](channels.md#bandwidth) |
 | 60 | [TX Idle](calls.md#tx-idle) |
 | 61 | [Night Mode](display.md#night-mode) |
@@ -213,7 +213,7 @@ These settings have no known storage yet:
 | [Knob select](keys.md#knob-select) → Knob | Settings → Radio Set → Keys | `Not yet documented` |
 | [Knob select](keys.md#knob-select) → Up/Down | Settings → Radio Set → Keys | `Not yet documented` |
 | [Night mode](display.md#night-mode-timer) timer | Settings → Radio Set → Display (`Unconfirmed`) | `Not yet documented` |
-| [Slot Suit](channels.md#slot-suit) | Per channel | `Not yet documented` |
+| [Slot Suit](slot-suit.md) | Per channel | `Not yet documented` |
 | [Call Ack](channels.md#channel-options) | Per channel | `Not yet documented` |
 | [SMS Ack](channels.md#channel-options) | Per channel | `Not yet documented` |
 | [Auto Scan](channels.md#channel-options) | Per channel | `Not yet documented` |

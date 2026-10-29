@@ -14,7 +14,7 @@ items, in this order:
 | 2 | `Delete Chan` | 13 | `Radio ID` | 24 | `Ack Forbid` |
 | 3 | `CH Type` | 14 | `RX CC` | 25 | [`TX Idle`](calls.md#tx-idle) |
 | 4 | `TX Power` | 15 | `TX CC` | 26 | `DMR Mode` |
-| 5 | `Offset` | 16 | `R&T CC` | 27 | [`Slot Suit`](#slot-suit) |
+| 5 | `Offset` | 16 | `R&T CC` | 27 | [`Slot Suit`](slot-suit.md) |
 | 6 | [`Band width`](#bandwidth) | 17 | `Time Slot` | 28 | `CRC Ignore` |
 | 7 | `RX Freq` | 18 | `Privacy` | 29 | [`Promiscuous`](#per-channel-promiscuous) |
 | 8 | `TX Freq` | 19 | [`RX Group`](calls.md#rx-groups) | 30 | [`Call Ack`](#channel-options) |
@@ -109,40 +109,6 @@ It does nothing on a DMR channel.
 
 - **Menu:** a [key function](keys.md#assigning-functions-to-keys),
   code 59
-
-## Slot Suit
-
-Smart time slot management for a channel. While it is on, the radio monitors both **slot 1** and **slot 2** on a DMR
-channel, without needing [promiscuous
-mode](#per-channel-promiscuous), and manages the time slot itself: you
-can't pick or swap the slot directly.
-
-While Slot Suit is on, each incoming call sets the time slot the radio
-uses to the slot that call arrived on, overriding the channel's
-programmed slot. It stays on that slot until a call arrives on the
-other one, or you make a call. When no call has set it, the radio uses
-the channel's slot.
-
-With two [RX group](calls.md#rx-groups) talkgroups active on different
-slots, the display alternates between them.
-
-Making a call clears it back to the channel's slot. The [hold
-time](calls.md#hold-times) keeps its own record of the slot, though, so
-calls you make while the hold is running still go out on the slot of
-the call you heard. Once the hold expires, the channel's slot applies
-again.
-
-Slot Suit is a stock AnyTone function, not a reFW addition. Factory
-firmware has it (the V1.05 image contains the label) but only enables it
-on Chinese-market models. reFW unlocks it on the others too.
-
-- **Menu:** Settings → Chan Set → Slot Suit (item 27), or toggle it
-  with the Slot Suit [key
-  function](keys.md#assigning-functions-to-keys), code 58
-- **Options:** `Not yet documented`
-- **Default:** `Not yet documented`
-- **Storage:** `Not yet documented`, including whether the key function
-  changes the channel's stored setting
 
 ## APRS type
 

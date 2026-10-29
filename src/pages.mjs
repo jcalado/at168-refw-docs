@@ -5,7 +5,7 @@ import { readdirSync, readFileSync } from 'node:fs';
 export const sidebar = [
 	{
 		label: 'Using the radio',
-		items: ['display', 'keys', 'calls', 'channels', 'scanning', 'power', 'fm-radio-and-clock'],
+		items: ['display', 'keys', 'calls', 'slot-suit', 'channels', 'scanning', 'power', 'fm-radio-and-clock'],
 	},
 	{
 		label: 'Watching DMR traffic',
