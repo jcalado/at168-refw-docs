@@ -88,8 +88,8 @@ frequencies are in MHz.
 | 16 | 144–147 | 144–147 | 430–440 | 430–440 |
 | 17 | 136–174 | 136–174 | 430–440 | 430–440 |
 
-Mode 00 and Mode 01 have the same limits. Mode 01 is reported to allow
-narrowband channels only (`Unconfirmed`). Mode 11 and Mode 14 also have
+Mode 01 has the same limits as Mode 00 but is narrowband only. Every
+other mode lets you choose the bandwidth. Mode 11 and Mode 14 also have
 the same limits.
 
 > [!CAUTION]
