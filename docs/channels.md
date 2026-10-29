@@ -7,7 +7,7 @@ description: "The Chan Set menu, per-channel promiscuous, squelch and options, a
 
 **Settings → Chan Set** edits the current channel. On reFW it has 33
 items, in this order (checked on a radio with a digital channel
-selected, 29 October 2026):
+selected, 29 October 2026, build `F7492020`):
 
 | # | Item | # | Item | # | Item |
 | --- | --- | --- | --- | --- | --- |
@@ -23,8 +23,28 @@ selected, 29 October 2026):
 | 10 | `Name` | 21 | `CH Ranging` | 32 | [`Trunking`](#channel-options) |
 | 11 | `TX Allow` | 22 | `APRS Rec` | 33 | [`SMS Ack`](#channel-options) |
 
-Which of these the radio hides on an analog channel is `Not yet
-documented`.
+With an analog channel selected, Chan Set shows a different list of
+32 items instead (checked on a radio, 29 October 2026, build
+`F7492020`). It has none of the DMR items above, and adds analog
+signalling, squelch and audio options:
+
+| # | Item | # | Item | # | Item |
+| --- | --- | --- | --- | --- | --- |
+| 1 | `New Chan` | 12 | `Reverse` | 23 | `2tone Enc` |
+| 2 | `Delete Chan` | 13 | `Compander` | 24 | `2tone Dec` |
+| 3 | `CH Type` | 14 | `Scrambler` | 25 | `5tone Enc` |
+| 4 | `TCDT` | 15 | `RX Freq` | 26 | `5tone BOT` |
+| 5 | `RCDT` | 16 | `TX Freq` | 27 | `5tone EOT` |
+| 6 | `RTCDT` | 17 | `TalkAround` | 28 | `QDC1200` |
+| 7 | `OPT signal` | 18 | `Name` | 29 | `PTT ID` |
+| 8 | `TX Power` | 19 | `Busy Lock` | 30 | `Work Alone` |
+| 9 | `Offset` | 20 | `TX Prohibit` | 31 | [`SQ Level`](#squelch) |
+| 10 | [`Squelch`](#squelch) | 21 | `OWN ID` | 32 | [`Auto Scan`](#channel-options) |
+| 11 | [`Band width`](#bandwidth) | 22 | `DTMF Enc` | | |
+
+![The Chan Set menu on an analog channel, items 28 to 32: QDC1200,
+PTT ID, Work Alone, SQ Level and Auto
+Scan](./images/chan-set-analog-end.png)
 
 ## Per-channel promiscuous
 
@@ -67,8 +87,9 @@ get an analog monitor key without giving up another programmable
 button.
 
 - **Menu:** Settings → Chan Set (`Unconfirmed`). It isn't one of the
-  menu's 33 items, nor one of the four in its Promiscuous sub-menu, so
-  its label and place are `Not yet documented`
+  menu's 33 items on a digital channel, nor one of the 32 on an analog
+  channel, nor one of the four in the Promiscuous sub-menu, so its
+  label and place are `Not yet documented`
 - **Options:** `Off`, `On` (`Unconfirmed`)
 - **Default:** `Off` (`Unconfirmed`)
 - **Storage:** `Not yet documented`, including whether it is now stored
@@ -95,6 +116,10 @@ squelch level in force at that moment to the channel.
 
 What the radio uses on a channel that has never had a squelch level
 saved is `Not yet documented`.
+
+With an analog channel selected, Chan Set has two squelch items:
+`Squelch` (item 10) and `SQ Level` (item 31). What each one sets, and
+how they relate to the stored level, is `Not yet documented`.
 
 - **Storage:** the channel's extension record. See
   [settings-storage.md](settings-storage.md#per-channel-settings).
@@ -129,16 +154,28 @@ The last items in Chan Set, after
   from CPS.
 - `Auto Scan`: starts auto scan straight away. It runs on the main
   screen only.
-- `Trunking`: an empty menu for now.
+- `Trunking`: not implemented yet. Selecting it shows a "Not Yet
+  Implemented" message, which closes by itself after a few seconds.
 - `SMS Ack`: sends an acknowledgement for a received message. This is
   separate from `SMS Forbid`.
 
 ![The Chan Set menu, items 29 to 33: Promiscuous, Call Ack, Auto Scan,
 Trunking and SMS Ack](./images/chan-set-options.png)
 
+On an analog channel only `Auto Scan` is offered, as item 32; the
+other three are DMR-only.
+
+Call Ack, Auto Scan and SMS Ack each open the same two-item list:
+
+![The Auto Scan list: Off and On](./images/auto-scan-options.png)
+
+![The message Trunking shows: Not Yet
+Implemented](./images/trunking-not-implemented.png)
+
 - **Menu:** Settings → Chan Set → Call Ack, Auto Scan, Trunking and
-  SMS Ack (items 30 to 33)
-- **Options:** `Not yet documented`
+  SMS Ack (items 30 to 33 on a digital channel)
+- **Options:** `Off`, `On` for Call Ack, Auto Scan and SMS Ack; none
+  for Trunking (read on a radio, 29 October 2026, build `F7492020`)
 - **Default:** `Not yet documented`
 - **Storage:** `Not yet documented`
 

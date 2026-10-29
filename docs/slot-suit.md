@@ -102,10 +102,13 @@ Slot Suit is a stock AnyTone function, not a reFW addition. Factory
 firmware has it (the V1.05 image contains the label) but only enables it
 on Chinese-market models. reFW unlocks it on the others too.
 
+![The Slot Suit list: Off and On](./images/slot-suit-options.png)
+
 - **Menu:** Settings → Chan Set → Slot Suit (item 27), or toggle it
   with the Slot Suit [key
   function](keys.md#assigning-functions-to-keys), code 58
-- **Options:** `Not yet documented`
+- **Options:** `Off`, `On` (read on a radio, 29 October 2026, build
+  `F7492020`)
 - **Default:** `Not yet documented`
 - **Storage:** `Not yet documented`, including whether the key function
   changes the channel's stored setting

@@ -83,11 +83,11 @@ and as unrelated bytes before and after.
 - **Matches radio:** the bit agrees with what the radio's menu showed,
   from a single reading. The firmware's menu code backs this up.
 - **Firmware:** read from the `REFW-20260919-155710` code that uses the
-  bit (USB charge sits next to the battery-voltage checks, Packet log
+  bit (USB Charge sits next to the battery-voltage checks, Packet Log
   gates the log flush), not yet observed on a radio.
 
 In RAM, `0x10` and `0x11` form one little-endian 16-bit word, so the
-firmware's own numbering runs from Bat icon (bit 0) to MAT3 (bit 11).
+firmware's own numbering runs from Bat Icon (bit 0) to MAT3 (bit 11).
 
 ### Key functions
 
@@ -138,8 +138,8 @@ Misc.
 | [Hold times](calls.md#hold-times) → Group | `group_call_hang_time` | `general_settings` + `0x19` (not flip-tested) |
 | [Hold times](calls.md#hold-times) → Dial Private | `man_dial_private_call_hang_time` | `extended_settings` + `0x38` |
 | [Hold times](calls.md#hold-times) → Dial Group | `man_dial_group_call_hang_time` | `extended_settings` + `0x37` |
-| [Scan range](scanning.md#scan-range) → VHF Start / End | `min_`/`max_vfo_scan_frequency_vhf` | `general_settings` + `0x60` / `0x64` |
-| [Scan range](scanning.md#scan-range) → UHF Start / End | `min_`/`max_vfo_scan_frequency_uhf` | `general_settings` + `0x58` / `0x5C` |
+| [Scan Range](scanning.md#scan-range) → VHF Start / End | `min_`/`max_vfo_scan_frequency_vhf` | `general_settings` + `0x60` / `0x64` |
+| [Scan Range](scanning.md#scan-range) → UHF Start / End | `min_`/`max_vfo_scan_frequency_uhf` | `general_settings` + `0x58` / `0x5C` |
 
 Checked by diffing codeplug reads around changes on the radio. The four
 hold times store the menu option's position in the list: `0`–`29` =

@@ -47,8 +47,8 @@ Header RPT, Scan Range and Hold Times](./images/misc-menu.png)
 ![The Hold Times sub-menu: Private, Group, Dial Private and Dial
 Group](./images/hold-times-menu.png)
 
-- **Menu:** Settings → Radio Set → Misc → Hold Times, a sub-menu with
-  the four items above
+- **Menu:** Settings → Radio Set → Misc → Hold Times (item 29, the
+  last in Misc), a sub-menu with the four items above
 - **Options:** `1s` … `30s`, `30m`, `Infinite`
 - **Default:** `6s` for all four
 - **Storage:** one byte per timer, holding the option's position in the

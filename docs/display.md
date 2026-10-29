@@ -8,7 +8,7 @@ description: "Idle screen options, backlight and dimming shortcuts, and new icon
 Picks the second line of text under the channel name on the idle
 screen: the active zone name, the currently selected talkgroup or
 contact, or both, alternating. reFW adds it to the radio's Display
-menu, with Bat icon and Bat warning from
+menu, with Bat Icon and Bat Warning from
 [Power and battery](power.md):
 
 ![The Display menu in Radio Set, items 14 to 18: Main Ch, Dual VFO,
@@ -70,7 +70,8 @@ Night Timer, Light Time and Ch.Name](./images/display-menu-top.png)
 - **Menu:** Settings → Radio Set → Display → Night Timer (item 3)
 - **Options:** `1s` to `30s`, in 1 s steps
 - **Default:** `Not yet documented`. One radio was set to `2s` when
-  read on 29 October 2026, which may not be the factory value
+  read on 29 October 2026, build `F7492020`, which may not be the
+  factory value
 - **Storage:** `Not yet documented`
 
 ## Light time

@@ -18,7 +18,7 @@ When on, packet headers and metadata are written sequentially to a
 reserved region of SPI flash outside the codeplug, so reading or
 writing a codeplug never disturbs the log.
 
-- **Menu:** Settings → Extra → Packet log
+- **Menu:** Settings → Extra → Packet Log
 - **Options:** `Off`, `On`
 - **Default:** `Off`
 - **Storage:** reFW settings block `0x02E80000` + `0x11`, bit 2, outside

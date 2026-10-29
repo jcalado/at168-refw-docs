@@ -21,9 +21,10 @@ when VFO A is selected is `Not yet documented`.
 ![The FM radio on 94.30 MHz, with the RDS station name ANTENA 2 under
 the frequency](./images/fm-radio-rds.png)
 
-Checked on a radio on 29 October 2026, tuned to 94.30 MHz. The station
-name stayed on screen without scrolling or changing over 12 seconds,
-and no other RDS text (such as RadioText) appeared. Whether reFW shows
+Checked on a radio on 29 October 2026, build `F7492020`, tuned to
+94.30 MHz. The station name stayed on screen without scrolling or
+changing over 12 seconds, and no other RDS text (such as RadioText)
+appeared. Whether reFW shows
 RadioText, clock time or other RDS data is `Not yet documented`.
 
 ## Clock sync

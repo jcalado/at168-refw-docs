@@ -45,6 +45,9 @@ Controls the confirmation beep from **Long Press 1**. The radio's
 programmable keys support a long press that normally beeps when it
 triggers; this setting can silence it.
 
+![The PF Beep list: Silent and Beep, with Beep
+selected](./images/pf-beep-options.png)
+
 - **Menu:** Settings → Radio Set → Audio → PF Beep (item 18)
 - **Options:** `Silent`, `Beep`
 - **Default:** `Not yet documented`
@@ -86,11 +89,38 @@ this.
 ## Menu navigation and entry
 
 In menus and lists, **PF1** is page up and **PF2** is page down: each
-press moves a whole screen, 5 items, instead of one line.
-This works in long lists such as Chan Set and the Keys menu.
+press moves the highlight 5 items, a whole screen, instead of one line.
+This works in long lists such as Chan Set and the Keys menu. Paging
+stops at the ends instead of wrapping round: PF2 stops on the last
+item, and PF1 stops on the first.
 
-In a list of option values, typing a value on the keypad jumps straight
-to that option.
+![The Display menu after one PF2 press from item 1: the highlight has
+moved to item 6, Exit Time](./images/menu-page-down.png)
+
+**Typing a number jumps to that item.** Every menu and option list
+numbers its items, and typing a number on the keypad moves the
+highlight straight to that item. This works in all of them, including
+the main menu, whose items have no number beside them. Numbers above 9
+work too: type `1` then `8` for item 18.
+
+![The Display menu after typing 18: the number shows in the top-left
+corner and item 18, Bat Warning, is
+highlighted](./images/menu-number-jump.png)
+
+- The number you type shows in the top-left corner.
+- A jump only moves the highlight. Press **Select** to open the item.
+- The radio waits for more digits for a second or two, so a second
+  number typed straight after the first is added to it: `10` then `15`
+  lands on item 5, not 15. Wait a few seconds between numbers.
+- It is the item number that counts, not the option's value. In the
+  [Band Mode](scanning.md#band-mode) list, item 1 is `Mode 00`, so
+  typing `4` selects `Mode 03`.
+
+Option lists open with the current value highlighted. **Back** leaves
+an option list without saving, even after you've moved the highlight
+to another value.
+
+Checked on a radio on 29 October 2026, build `F7492020`.
 
 > [!NOTE]
 > The rest of this section comes from the changelog for build
@@ -100,4 +130,5 @@ to that option.
 - **DCS codes can be typed in directly** instead of scrolled to.
 
 PF1 is also handled better when backing out of editors and when
-scrolling up while already at the top of a list.
+scrolling up while already at the top of a list. (On a radio, PF1 at
+the top of the Display menu stays on item 1.)

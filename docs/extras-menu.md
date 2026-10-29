@@ -15,8 +15,8 @@ changes.
 ![The Extra menu: Band Mode, USB Charge, Packet Log and
 MAT3](./images/extras-menu.png)
 
-USB charge, Packet log and MAT3 are on/off toggles that take effect
-the moment you flip them. Band mode opens a list of modes.
+USB Charge, Packet Log and MAT3 are on/off toggles that take effect
+the moment you flip them. Band Mode opens a list of modes.
 
 Most reFW options sit beside related stock settings in **Settings →
 Radio Set** instead:
@@ -33,9 +33,9 @@ Radio Set** instead:
 
 | Item | What it does | Options | Default |
 | --- | --- | --- | --- |
-| [Band mode](scanning.md#band-mode) | Change band limits without the engineering menu | Mode 00 … Mode 17 | per radio |
-| [USB charge](power.md#usb-charge) | Toggle battery charging over the USB-C port | On / Off | On |
-| [Packet log](packet-log.md#turning-it-on) | Journal traffic to flash for later download | Off / On | Off |
+| [Band Mode](scanning.md#band-mode) | Change band limits without the engineering menu | Mode 00 … Mode 17 | per radio |
+| [USB Charge](power.md#usb-charge) | Toggle battery charging over the USB-C port | On / Off | On |
+| [Packet Log](packet-log.md#turning-it-on) | Journal traffic to flash for later download | Off / On | Off |
 | [MAT3](mat3.md#mat3-setting) | Stream DMR traffic over USB to the MAT3 app | Disabled / Enabled | Disabled |
 
 Most of these are saved in reFW's own settings block in flash, not in

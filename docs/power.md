@@ -9,7 +9,10 @@ Sets how battery status appears at the top of the display: the
 three-segment **Icon**, or a measured **Voltage** reading (for example,
 `8.1V`).
 
-- **Menu:** Settings → Radio Set → Display → Bat Icon
+![The Bat Icon list: Icon and Voltage, with Voltage
+selected](./images/bat-icon-options.png)
+
+- **Menu:** Settings → Radio Set → Display → Bat Icon (item 17)
 - **Options:** `Icon`, `Voltage`
 - **Default:** `Icon`
 - **Storage:** reFW settings block `0x02E80000` + `0x10`, bit 0 (`0` =
@@ -45,7 +48,7 @@ laptop or phone for long sessions (such as [packet
 logging](packet-log.md) or running [MAT3](mat3.md)) to avoid draining
 the host battery.
 
-- **Menu:** Settings → Extra → USB charge
+- **Menu:** Settings → Extra → USB Charge
 - **Options:** `On`, `Off`
 - **Default:** `On`
 - **Storage:** reFW settings block `0x02E80000` + `0x11`, bit 1. Note

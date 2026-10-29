@@ -22,8 +22,14 @@ example `136.00000`).
 This adds no storage of its own: the four limits are the stock CPS-only
 VFO scan range fields.
 
-- **Menu:** Settings → Radio Set → Misc → Scan range, a sub-menu
-  with the four items above
+![The Misc menu, items 25 to 29, with Scan Range
+highlighted](./images/misc-menu-scan-range.png)
+
+![The Scan Range sub-menu: VHF Start, VHF End, UHF Start and UHF
+End](./images/scan-range-menu.png)
+
+- **Menu:** Settings → Radio Set → Misc → Scan Range (item 28), a
+  sub-menu with the four items above
 - **Storage:** 4 bytes each, a little-endian u32 in units of 10 Hz.
   Checked on a radio running `REFW-20260919-155710` on 2026-09-21:
   VHF Start 136.00000 → 144.12345 MHz changed `0x60`–`0x63` from
@@ -37,9 +43,13 @@ VFO scan range fields.
 Lets you change the radio's operating frequency bands directly from the
 menu, skipping the power-on button combination needed to reach the
 factory engineering menu. The list offers 18 options: **Mode 00**
-through **Mode 17**.
+through **Mode 17**. The list opens on the radio's current mode. Its
+item numbers run one ahead of the mode numbers: item 1 is Mode 00, so
+typing `4` highlights Mode 03.
 
-- **Menu:** Settings → Extra → Band mode
+![The Band Mode list, opened on Mode 03](./images/band-mode-list.png)
+
+- **Menu:** Settings → Extra → Band Mode (item 1)
 - **Options:** `Mode 00` … `Mode 17`
 - **Default:** Whatever mode your radio was provisioned with from the
   factory

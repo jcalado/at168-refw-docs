@@ -48,9 +48,11 @@ The value of these notes is that they are checked. So:
 - Mark anything not confirmed as `Unconfirmed` or
   `Not yet documented`. An explicit gap is better than a plausible guess
   that gets copied into third-party tooling.
-- When a value was read off a real radio, say so and date it. Several of
-  these settings store values in the opposite order to the way the menu
-  displays them; that is only knowable by checking.
+- When a value was read off a real radio, say so, date it, and name
+  the build it runs: **Build Ver #A** in Settings → Device Info, the
+  firmware's git commit (as in "29 October 2026, build `F7492020`").
+  Several of these settings store values in the opposite order to the
+  way the menu displays them; that is only knowable by checking.
 - When a fact comes from a firmware image, name the build
   (`REFW-YYYYMMDD-HHMMSS`). Addresses move between builds; bit
   assignments so far have not.
