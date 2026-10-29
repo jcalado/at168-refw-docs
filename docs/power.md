@@ -3,19 +3,19 @@ title: "Power and battery"
 description: "Battery voltage display, a dismissable low-battery warning, and USB charging control"
 ---
 
-## Batt view
+## Bat icon
 
 Sets how battery status appears at the top of the display: the
 three-segment **Icon**, or a measured **Voltage** reading (for example,
 `8.1V`).
 
-- **Menu:** Settings → Extras → Batt view
+- **Menu:** Settings → Radio Set → Display → Bat Icon
 - **Options:** `Icon`, `Voltage`
 - **Default:** `Icon`
 - **Storage:** reFW settings block `0x02E80000` + `0x10`, bit 0 (`0` =
   Icon, `1` = Voltage)
 
-## Low battery
+## Bat warning
 
 Decides whether you can dismiss the low-battery warning screen.
 
@@ -24,7 +24,10 @@ display and refuses to leave until you plug in a charger. Setting this
 to **Skippable** lets you press the Red (Back) key to dismiss the pop-up
 so you can finish what you were doing.
 
-- **Menu:** Settings → Extras → Low battery
+![The Bat Warning list: Locked and
+Skippable](./images/bat-warning.png)
+
+- **Menu:** Settings → Radio Set → Display → Bat Warning
 - **Options:** `Locked`, `Skippable`
 - **Default:** `Locked`
 - **Storage:** reFW settings block `0x02E80000` + `0x10`, bit 2 (`0` =

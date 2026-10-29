@@ -9,7 +9,7 @@ of others. These were checked against the firmware image of build
 
 **Digi Moni is now Promiscuous.** The function and its shortcut behave
 the same, apart from now being [stored per
-channel](channels.md#per-channel-promiscuous). The Extras item that
+channel](channels.md#per-channel-promiscuous). The setting that
 extends it is also called [Promiscuous](channels.md#promiscuous).
 
 **Radio Set groups** have new names:
@@ -23,7 +23,9 @@ extends it is also called [Promiscuous](channels.md#promiscuous).
 
 So key assignments now live under **Settings → Radio Set → Keys**. That
 group also gains `Hash Short` and `0 Long` … `9 Long` for
-[Extra remap](keys.md#extra-remap), plus a new `Key Tone` item.
+[number-key and `#` shortcuts](keys.md#number-key-and--shortcuts),
+`Knob` and `Up/Down` for [Knob select](keys.md#knob-select), plus a
+new `Key Tone` item.
 
 **Other labels** were reworded, or had their capitalisation made
 consistent (`Tx`/`Rx` become `TX`/`RX` throughout):

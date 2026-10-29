@@ -6,16 +6,17 @@ tableOfContents: false
 
 reFW builds directly on top of AnyTone's factory firmware. These pages
 cover everything it changes, grouped by what you're doing with the
-radio: most new options live in **Settings → Extras**, and reFW also
-adds key functions, stores some settings per channel, renames labels
-and fixes bugs across the rest of the radio.
+radio: reFW adds new options to the stock **Settings → Radio Set**
+menus and its own **Settings → Extras** menu, adds key functions,
+stores some settings per channel, renames labels and fixes bugs across
+the rest of the radio.
 
 ![The radio's home screen in dual-VFO mode: the date and time, an
 analog channel above a DMR channel, each with its channel and zone
 name, and the battery shown as a voltage in the top corner](./images/radio-home-screen.png)
 
 The home screen on reFW, with the battery shown as a voltage by
-[Batt view](power.md#batt-view).
+[Bat icon](power.md#bat-icon).
 
 Standing at the radio looking at a menu? The [Extras
 menu](extras-menu.md) and [Shortcut functions](shortcuts.md) pages list
@@ -31,7 +32,7 @@ every item and link to where it is described.
 | [Display and indicators](display.md) | Idle screen options, backlight and dimming shortcuts, and new icons |
 | [Keys and navigation](keys.md) | Assigning functions to keys, number-key and # shortcuts, what the knob and up/down keys select, and faster menu entry |
 | [Calls, contacts and RX groups](calls.md) | Contact list shortcuts, call hold times and exclusive hold, time slot fallback, RX groups and manual dial |
-| [Channels and monitoring](channels.md) | Per-channel promiscuous, squelch and options, a monitor key, Copy 2 VFO, and channel toggles |
+| [Channels and monitoring](channels.md) | The Chan Set menu, per-channel promiscuous, squelch and options, a monitor key, Copy 2 VFO, and channel toggles |
 | [Scanning and band limits](scanning.md) | VFO scan limits and changing the radio's band mode from the menu |
 | [Power and battery](power.md) | Battery voltage display, a dismissable low-battery warning, and USB charging control |
 | [FM radio and clock](fm-radio-and-clock.md) | RDS on the broadcast FM receiver, and setting the clock from a PC |

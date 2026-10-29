@@ -1,13 +1,38 @@
 ---
 title: "Channels and monitoring"
-description: "Per-channel promiscuous, squelch and options, a monitor key, Copy 2 VFO, and channel toggles"
+description: "The Chan Set menu, per-channel promiscuous, squelch and options, a monitor key, Copy 2 VFO, and channel toggles"
 ---
+
+## Chan Set menu
+
+**Settings → Chan Set** edits the current channel. On reFW it has 33
+items, in this order:
+
+| # | Item | # | Item | # | Item |
+| --- | --- | --- | --- | --- | --- |
+| 1 | `New Chan` | 12 | `TX Prohibit` | 23 | `SMS Forbid` |
+| 2 | `Delete Chan` | 13 | `Radio ID` | 24 | `Ack Forbid` |
+| 3 | `CH Type` | 14 | `RX CC` | 25 | [`TX Idle`](calls.md#tx-idle) |
+| 4 | `TX Power` | 15 | `TX CC` | 26 | `DMR Mode` |
+| 5 | `Offset` | 16 | `R&T CC` | 27 | [`Slot Suit`](#slot-suit) |
+| 6 | [`Band width`](#bandwidth) | 17 | `Time Slot` | 28 | `CRC Ignore` |
+| 7 | `RX Freq` | 18 | `Privacy` | 29 | [`Promiscuous`](#per-channel-promiscuous) |
+| 8 | `TX Freq` | 19 | [`RX Group`](calls.md#rx-groups) | 30 | [`Call Ack`](#channel-options) |
+| 9 | `TalkAround` | 20 | `Work Alone` | 31 | [`Auto Scan`](#channel-options) |
+| 10 | `Name` | 21 | `CH Ranging` | 32 | [`Trunking`](#channel-options) |
+| 11 | `TX Allow` | 22 | `APRS Rec` | 33 | [`SMS Ack`](#channel-options) |
+
+Which of these the radio hides on an analog channel is `Not yet
+documented`.
 
 ## Per-channel promiscuous
 
 Promiscuous mode (called Digi Moni in stock firmware) is stored with
 each channel in reFW, so switching channels switches it too. Each
 channel has a Promiscuous sub-menu with four items:
+
+![The Promiscuous sub-menu: On/Off, CC Option, ID Option and Slot
+Hold](./images/promiscuous-menu.png)
 
 - `On/Off`: `Off`, `Single Slot` or `Double Slot`. Single Slot is no
   longer ignored.
@@ -16,9 +41,16 @@ channel has a Promiscuous sub-menu with four items:
 - `ID Option`: `Any Id` or `Same Id`.
 - `Slot Hold`: `Off` or `On`.
 
+![The Promiscuous On/Off list: Off, Single Slot and Double
+Slot](./images/promiscuous-on-off.png)
+
 Saving any of these also pins the channel's squelch to the level in
 force at that moment (see [Squelch](#squelch)).
 
+![The Chan Set menu, items 26 to 30: DMR Mode, Slot Suit, CRC Ignore,
+Promiscuous and Call Ack](./images/chan-set-promiscuous.png)
+
+- **Menu:** Settings → Chan Set → Promiscuous (item 29)
 - **Storage:** the channel's extension record. See
   [settings-storage.md](settings-storage.md#per-channel-settings).
 
@@ -33,10 +65,13 @@ pressing Promiscuous on analog toggles the squelch fully open, so you
 get an analog monitor key without giving up another programmable
 button.
 
-- **Menu:** Settings → Extras → Promiscuous
-- **Options:** `Off`, `On`
-- **Default:** `Off`
-- **Storage:** reFW settings block `0x02E80000` + `0x10`, bit 5
+- **Menu:** Settings → Chan Set (`Unconfirmed`). It isn't one of the
+  menu's 33 items, nor one of the four in its Promiscuous sub-menu, so
+  its label and place are `Not yet documented`
+- **Options:** `Off`, `On` (`Unconfirmed`)
+- **Default:** `Off` (`Unconfirmed`)
+- **Storage:** `Not yet documented`, including whether it is now stored
+  per channel
 
 This logic is evaluated inside the Promiscuous key routine, so it only
 changes what that specific key press does.
@@ -48,7 +83,7 @@ promiscuous with it. The stock AnyTone CPS calls this key function
 **Digital Monitor**.
 
 > [!NOTE]
-> Whether the key still needs this Extras setting to act as a monitor
+> Whether the key still needs this setting to act as a monitor
 > on analog channels is `Unconfirmed`.
 
 ## Squelch
@@ -77,8 +112,7 @@ It does nothing on a DMR channel.
 
 ## Slot Suit
 
-Smart time slot management, switched on or off with one key. While it
-is on, the radio monitors both **slot 1** and **slot 2** on a DMR
+Smart time slot management for a channel. While it is on, the radio monitors both **slot 1** and **slot 2** on a DMR
 channel, without needing [promiscuous
 mode](#per-channel-promiscuous), and manages the time slot itself: you
 can't pick or swap the slot directly.
@@ -100,10 +134,15 @@ again.
 
 Slot Suit is a stock AnyTone function, not a reFW addition. Factory
 firmware has it (the V1.05 image contains the label) but only enables it
-on Chinese-market models. reFW makes it assignable on the others too.
+on Chinese-market models. reFW unlocks it on the others too.
 
-- **Menu:** a [key function](keys.md#assigning-functions-to-keys),
-  code 58
+- **Menu:** Settings → Chan Set → Slot Suit (item 27), or toggle it
+  with the Slot Suit [key
+  function](keys.md#assigning-functions-to-keys), code 58
+- **Options:** `Not yet documented`
+- **Default:** `Not yet documented`
+- **Storage:** `Not yet documented`, including whether the key function
+  changes the channel's stored setting
 
 ## APRS type
 
@@ -116,19 +155,22 @@ changing APRS settings elsewhere in the codeplug.
 
 ## Channel options
 
-Each channel's edit menu has these items, alongside
+The last items in Chan Set, after
 [Promiscuous](#per-channel-promiscuous):
 
-- `Call ACK`: call confirmation. Stock firmware only lets you set this
+- `Call Ack`: call confirmation. Stock firmware only lets you set this
   from CPS.
-- `SMS ACK`: sends an acknowledgement for a received message. This is
-  separate from SMS Forbid.
-- `Auto scan`: starts auto scan straight away. It runs on the main
+- `Auto Scan`: starts auto scan straight away. It runs on the main
   screen only.
 - `Trunking`: an empty menu for now.
+- `SMS Ack`: sends an acknowledgement for a received message. This is
+  separate from `SMS Forbid`.
 
-- **Menu:** the channel's edit menu. The exact path is `Not yet
-  documented`.
+![The Chan Set menu, items 29 to 33: Promiscuous, Call Ack, Auto Scan,
+Trunking and SMS Ack](./images/chan-set-options.png)
+
+- **Menu:** Settings → Chan Set → Call Ack, Auto Scan, Trunking and
+  SMS Ack (items 30 to 33)
 - **Options:** `Not yet documented`
 - **Default:** `Not yet documented`
 - **Storage:** `Not yet documented`

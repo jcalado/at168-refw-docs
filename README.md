@@ -5,9 +5,10 @@ Community documentation for **reFW**, a custom firmware for the
 
 reFW builds directly on top of AnyTone's factory firmware. These pages
 cover everything it changes, grouped by what you're doing with the
-radio: most new options live in **Settings → Extras**, and reFW also
-adds key functions, stores some settings per channel, renames labels
-and fixes bugs across the rest of the radio.
+radio: reFW adds new options to the stock **Settings → Radio Set**
+menus and its own **Settings → Extras** menu, adds key functions,
+stores some settings per channel, renames labels and fixes bugs across
+the rest of the radio.
 
 <p align="center">
   <img src="docs/images/radio-home-screen.png" width="256" alt="The radio's home screen on reFW, with an analog channel above a DMR channel and the battery shown as a voltage">
@@ -26,7 +27,7 @@ The same pages are published as a searchable site at
 | [docs/display.md](docs/display.md) | Idle screen options, backlight and dimming shortcuts, and new icons |
 | [docs/keys.md](docs/keys.md) | Assigning functions to keys, number-key and # shortcuts, what the knob and up/down keys select, and faster menu entry |
 | [docs/calls.md](docs/calls.md) | Contact list shortcuts, call hold times and exclusive hold, time slot fallback, RX groups and manual dial |
-| [docs/channels.md](docs/channels.md) | Per-channel promiscuous, squelch and options, a monitor key, Copy 2 VFO, and channel toggles |
+| [docs/channels.md](docs/channels.md) | The Chan Set menu, per-channel promiscuous, squelch and options, a monitor key, Copy 2 VFO, and channel toggles |
 | [docs/scanning.md](docs/scanning.md) | VFO scan limits and changing the radio's band mode from the menu |
 | [docs/power.md](docs/power.md) | Battery voltage display, a dismissable low-battery warning, and USB charging control |
 | [docs/fm-radio-and-clock.md](docs/fm-radio-and-clock.md) | RDS on the broadcast FM receiver, and setting the clock from a PC |

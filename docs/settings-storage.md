@@ -23,8 +23,8 @@ image.
 | --- | --- | --- |
 | `0x00` | 4 | ASCII `REFW`: validity tag used by host tools to detect reFW |
 | `0x04`-`0x0F` | 12 | Not yet documented (zero on the test radio) |
-| `0x10` | 1 | [Extras flags, byte 1](#0x10-extras-flags-byte-1) |
-| `0x11` | 1 | [Extras flags, byte 2](#0x11-extras-flags-byte-2) |
+| `0x10` | 1 | [Flags, byte 1](#0x10-flags-byte-1) |
+| `0x11` | 1 | [Flags, byte 2](#0x11-flags-byte-2) |
 | `0x12`-`0x3F` | 46 | Not yet documented (zero on the test radio) |
 | `0x40` | 1 | [Key function](#key-functions), `#` short press (Hash Short) |
 | `0x41`-`0x4A` | 10 | [Key functions](#key-functions), `0 Long` … `9 Long` |
@@ -47,30 +47,30 @@ live, marks it live, and retires the other.
 On the test radio both banks were marked live and neither was retired,
 so the firmware loads bank A. Writing the 512 bytes of bank A through the
 normal program-mode protocol works: on 2026-09-21 an `at168-cps` write
-changed three settings, including MAT3 and Show cont, and the radio
+changed three settings, including MAT3, and the radio
 booted with all three. Tools should write **bank A only** and never
 touch either bank's status words. Program-mode reads of bank B aren't a
 reliable view of it: the same address read as a clean copy of A once,
 and as unrelated bytes before and after.
 
-### `0x10`: Extras flags, byte 1
+### `0x10`: Flags, byte 1
 
-| Bit | Extras item | Values | Evidence |
+| Bit | Setting | Values | Evidence |
 | --- | --- | --- | --- |
-| 0 | [Batt view](power.md#batt-view) | 0 = Icon, 1 = Voltage | Matches radio |
+| 0 | [Bat icon](power.md#bat-icon) | 0 = Icon, 1 = Voltage | Matches radio |
 | 1 | `Not yet documented` | | |
-| 2 | [Low battery](power.md#low-battery) | 0 = Locked, 1 = Skippable | Matches radio |
-| 3 | [Faster](display.md#faster) | 0 = Off, 1 = On | Matches radio |
-| 4 | [Select 1st](calls.md#select-1st) | 0 = Off, 1 = On | Matches radio |
-| 5 | [Promiscuous](channels.md#promiscuous) | 0 = Off, 1 = On | Matches radio |
-| 6 | [LP1 silent](keys.md#lp1-silent) | 0 = Off, 1 = On | Matches radio |
-| 7 | [Extra remap](keys.md#extra-remap) | 0 = Off, 1 = On | Matches radio |
+| 2 | [Bat warning](power.md#bat-warning) | 0 = Locked, 1 = Skippable | Matches radio |
+| 3 | [Sub text → Speed](display.md#speed) | 0 = Slow, 1 = Fast | Matches radio |
+| 4 | `Not yet documented` | | |
+| 5 | `Not yet documented` | | |
+| 6 | `Not yet documented` | | |
+| 7 | `Not yet documented` | | |
 
-### `0x11`: Extras flags, byte 2
+### `0x11`: Flags, byte 2
 
-| Bit | Extras item | Values | Evidence |
+| Bit | Setting | Values | Evidence |
 | --- | --- | --- | --- |
-| 0 | [VFO marker](display.md#vfo-marker) | 0 = Off, 1 = On | Firmware |
+| 0 | `Not yet documented` | | |
 | 1 | [USB charge](power.md#usb-charge) | **inverted**: 0 = charging on, 1 = off | Firmware |
 | 2 | [Packet log](packet-log.md#turning-it-on) | 0 = Off, 1 = On | Firmware |
 | 3 | [MAT3](mat3.md#mat3-setting) | 0 = Disabled, 1 = Enabled | Flip-tested |
@@ -87,7 +87,7 @@ and as unrelated bytes before and after.
   gates the log flush), not yet observed on a radio.
 
 In RAM, `0x10` and `0x11` form one little-endian 16-bit word, so the
-firmware's own numbering runs from Batt view (bit 0) to MAT3 (bit 11).
+firmware's own numbering runs from Bat icon (bit 0) to MAT3 (bit 11).
 
 ### Key functions
 
@@ -121,7 +121,7 @@ is `Not yet documented`, and the startup reset only runs at boot.
 ## Not in the stock codeplug area
 
 None of reFW's own settings live in `general_settings`. Changing MAT3
-and another Extras flag on the radio changed the reFW block and no
+and another reFW flag on the radio changed the reFW block and no
 codeplug byte, and the block's startup code never reads the codeplug.
 Bytes `0xEB` and `0xEF` of `general_settings` are not reFW settings.
 
@@ -129,12 +129,11 @@ Bytes `0xEB` and `0xEF` of `general_settings` are not reFW settings.
 
 Some reFW menu items don't add storage. They put a stock CPS-only
 setting into the radio's menu, and the value stays in the stock
-codeplug field. Show cont is in Settings → Radio Set → Display; Hold
-times and Scan range are in Settings → Radio Set → Misc.
+codeplug field. Hold Times and Scan Range are in Settings → Radio Set →
+Misc.
 
 | Menu item | Stock field | Location |
 | --- | --- | --- |
-| [Show cont](display.md#show-cont) | `show_current_contact` | `general_settings` + `0xB9`, bit 0 (0 = Off, 1 = On) |
 | [Hold times](calls.md#hold-times) → Private | `private_call_hang_time` | `general_settings` + `0x1A` |
 | [Hold times](calls.md#hold-times) → Group | `group_call_hang_time` | `general_settings` + `0x19` (not flip-tested) |
 | [Hold times](calls.md#hold-times) → Dial Private | `man_dial_private_call_hang_time` | `extended_settings` + `0x38` |
@@ -204,17 +203,20 @@ reads:
 
 ## Unmapped
 
-Every Extras item's storage is mapped. These settings have no known
-storage yet:
+These settings have no known storage yet:
 
 | Setting | Where it is | Storage |
 | --- | --- | --- |
+| [Promiscuous](channels.md#promiscuous) | Settings → Chan Set (`Unconfirmed`) | `Not yet documented` |
+| [PF beep](keys.md#pf-beep) | Settings → Radio Set → Audio | `Not yet documented` |
+| [Sub text → Mode](display.md#mode) | Settings → Radio Set → Display → Sub Text | `Not yet documented` |
 | [Knob select](keys.md#knob-select) → Knob | Settings → Radio Set → Keys | `Not yet documented` |
 | [Knob select](keys.md#knob-select) → Up/Down | Settings → Radio Set → Keys | `Not yet documented` |
 | [Night mode](display.md#night-mode-timer) timer | Settings → Radio Set → Display (`Unconfirmed`) | `Not yet documented` |
-| [Call ACK](channels.md#channel-options) | Per channel | `Not yet documented` |
-| [SMS ACK](channels.md#channel-options) | Per channel | `Not yet documented` |
-| [Auto scan](channels.md#channel-options) | Per channel | `Not yet documented` |
+| [Slot Suit](channels.md#slot-suit) | Per channel | `Not yet documented` |
+| [Call Ack](channels.md#channel-options) | Per channel | `Not yet documented` |
+| [SMS Ack](channels.md#channel-options) | Per channel | `Not yet documented` |
+| [Auto Scan](channels.md#channel-options) | Per channel | `Not yet documented` |
 
 PF-key assignments in the Keys menu have not been checked against the
 reFW block yet.

@@ -3,17 +3,12 @@ title: "Calls, contacts and RX groups"
 description: "Contact list shortcuts, call hold times and exclusive hold, time slot fallback, RX groups and manual dial"
 ---
 
-## Select 1st
+## Select first
 
 In stock firmware, picking an entry from the talkgroup (TG) menu puts
-**Select** several lines down in the pop-up menu. Turning this on moves
-**Select** to the top slot, saving an extra keystroke on the default
-action.
-
-- **Menu:** Settings → Extras → Select 1st
-- **Options:** `Off`, `On`
-- **Default:** `Off`
-- **Storage:** reFW settings block `0x02E80000` + `0x10`, bit 4
+**Select** several lines down in the pop-up menu. reFW always puts
+**Select** in the top slot, saving an extra keystroke on the default
+action. There is no setting for this.
 
 ## Hold times
 
@@ -46,7 +41,13 @@ This adds no storage of its own. The four timers are stock codeplug
 fields that factory firmware only lets you set from CPS, and reFW puts
 them in the radio's menu.
 
-- **Menu:** Settings → Radio Set → Misc → Hold times, a sub-menu with
+![The Misc menu in Radio Set, items 25 to 29: Date Time, TX Preamble,
+Header RPT, Scan Range and Hold Times](./images/misc-menu.png)
+
+![The Hold Times sub-menu: Private, Group, Dial Private and Dial
+Group](./images/hold-times-menu.png)
+
+- **Menu:** Settings → Radio Set → Misc → Hold Times, a sub-menu with
   the four items above
 - **Options:** `1s` … `30s`, `30m`, `Infinite`
 - **Default:** `6s` for all four

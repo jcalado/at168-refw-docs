@@ -3,50 +3,47 @@ title: "Display and indicators"
 description: "Idle screen options, backlight and dimming shortcuts, and new icons"
 ---
 
-## VFO marker
+## Sub text
 
-Adds an indicator next to the active VFO in dual-VFO mode, showing
-which frequency will transmit.
+Picks the second line of text under the channel name on the idle
+screen: the active zone name, the currently selected talkgroup or
+contact, or both, alternating. reFW adds it to the radio's Display
+menu, with Bat icon and Bat warning from
+[Power and battery](power.md):
 
-- **Menu:** Settings → Extras → VFO marker
-- **Options:** `Off`, `On`
-- **Default:** `Off`
-- **Storage:** reFW settings block `0x02E80000` + `0x11`, bit 0
+![The Display menu in Radio Set, items 14 to 18: Main Ch, Dual VFO,
+Sub Text, Bat Icon and Bat Warning](./images/display-menu.png)
 
-## Show cont
+Sub Text opens a sub-menu with two items, Mode and Speed:
 
-Cycles the home screen display between the active zone name and the
-currently selected talkgroup or contact. The screen swaps labels every 5
-seconds by default, or every 2 seconds if you have [Faster](#faster)
-enabled.
+![The Sub Text sub-menu, with Mode and Speed](./images/sub-text-menu.png)
 
-This is not a new reFW setting. It is the stock **Show current
-contact** option, which factory firmware only lets you set from CPS
-(hence the changelog's "CPS-only option: Show Contact"). reFW adds it
-to the radio's Display menu. [Faster](#faster) stays in Extras and
-still sets how fast Show cont alternates.
+### Mode
 
-- **Menu:** Settings → Radio Set → Display → Show cont
-- **Options:** `Off`, `On`
-- **Default:** `Unconfirmed` for a factory-fresh radio. The template in
-  `at168-cps` (work in progress, not yet released) sets it `On`.
-- **Storage:** `general_settings` byte `0xB9`, bit 0 (`0` = Off,
-  `1` = On; existing stock CPS field `show_current_contact`). Checked
-  on a radio running `REFW-20260919-155710` on 2026-09-21: switching
-  Show cont from On to Off in the menu changed only this bit, `1` → `0`.
-  Stock firmware reads the same bit, so a stock CPS already edits it.
+What the second line shows. `Both` swaps between the zone name and the
+contact at the rate set by [Speed](#speed).
 
-## Faster
+![The Sub Text Mode list: Zone, Contact and
+Both](./images/sub-text-mode.png)
 
-Speeds up alternating text on the idle screen. When [Show
-cont](#show-cont) is enabled, the screen alternates between the zone
-name and contact name. By default that happens every 5 seconds; setting
-**Faster** to `On` cuts the cycle to 2 seconds.
+- **Menu:** Settings → Radio Set → Display → Sub Text → Mode
+- **Options:** `Zone`, `Contact`, `Both`
+- **Default:** `Not yet documented`
+- **Storage:** `Not yet documented`
 
-- **Menu:** Settings → Extras → Faster
-- **Options:** `Off`, `On`
-- **Default:** `Off`
-- **Storage:** reFW settings block `0x02E80000` + `0x10`, bit 3
+### Speed
+
+How fast `Both` alternates: every 5 seconds at `Slow`, every 2 seconds
+at `Fast`.
+
+![The Sub Text Speed list, with Fast
+selected](./images/sub-text-speed.png)
+
+- **Menu:** Settings → Radio Set → Display → Sub Text → Speed
+- **Options:** `Slow`, `Fast`
+- **Default:** `Slow`
+- **Storage:** reFW settings block `0x02E80000` + `0x10`, bit 3 (`0` =
+  Slow, `1` = Fast)
 
 ## Night mode
 
@@ -102,3 +99,5 @@ then switch back to your usual timeout when carrying the radio.
   The T1/T2 indicator doesn't change for Slot Suit or TX Idle yet.
 - **Red channel indicator** during an [exclusive
   hold](calls.md#exclusive-hold).
+- **Active VFO marker** in dual-VFO mode, showing which frequency will
+  transmit. It is always on; there is no setting for it.

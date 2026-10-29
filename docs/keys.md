@@ -11,29 +11,27 @@ them up the same way as stock ones: **Settings → Radio Set → Keys**,
 pick the key (PF1, PF2, …) and the press length, then pick the
 function.
 
-With [Extra remap](#extra-remap) on, number-key long presses and the
-`#` key can hold a function too, which helps if the side buttons are
-already in use.
+Number-key long presses and the `#` key can hold a function too (see
+[Number-key and # shortcuts](#number-key-and--shortcuts)), which helps
+if the side buttons are already in use.
 
-## Extra remap
+## Number-key and # shortcuts
 
-Enables additional programmable shortcuts across the keypad:
-long-pressing any **number key (0–9)** and short-pressing the **`#`
-key** can trigger custom actions.
+Long-pressing any **number key (0–9)** and short-pressing the **`#`
+key** can each run a function you assign. They are always available;
+there is no setting to turn them on.
 
-- **Menu:** Settings → Extras → Extra remap
-- **Options:** `Off`, `On`
-- **Default:** `Off`
+![The Keys menu, items 8 to 12: Hash Short, 0 Long, 1 Long, 2 Long and
+3 Long](./images/keys-menu-long.png)
 
-Here is how the `#` key mapping works in memory:
-
-- **Storage (enable):** reFW settings block `0x02E80000` + `0x10`, bit
-  7. The radio also exposes a new **Hash Short** entry under **Settings
-  → Radio Set → Keys**, next to new **0 Long** … **9 Long** entries for
-  the number keys.
-- **Storage (functions):** reFW settings block `0x02E80000` + `0x40` for
-  Hash Short, then `0x41` … `0x4A` for `0 Long` … `9 Long`. Each byte is
-  a key-function code; see
+- **Menu:** Settings → Radio Set → Keys → Hash Short, and `0 Long` …
+  `9 Long` (items 8 to 18)
+- **Options:** any [key function](shortcuts.md)
+- **Default:** `0 Long` is Dial (code `16`); the rest are OFF (code
+  `0`)
+- **Storage:** reFW settings block `0x02E80000` + `0x40` for Hash
+  Short, then `0x41` … `0x4A` for `0 Long` … `9 Long`. Each byte is a
+  key-function code; see
   [settings-storage.md](settings-storage.md#key-functions) for the
   codes.
 
@@ -41,16 +39,16 @@ The `#` key has no stock function left in reFW: its short press only
 runs the shortcut you assign to Hash Short. There is no long press on
 `#`.
 
-## LP1 silent
+## PF beep
 
-Silences the beep from **Long Press 1**. The radio's programmable keys
-support a long press that normally emits a confirmation beep when
-triggered. Turning this on silences the confirmation beep.
+Controls the confirmation beep from **Long Press 1**. The radio's
+programmable keys support a long press that normally beeps when it
+triggers; this setting can silence it.
 
-- **Menu:** Settings → Extras → LP1 silent
-- **Options:** `Off`, `On`
-- **Default:** `Off`
-- **Storage:** reFW settings block `0x02E80000` + `0x10`, bit 6
+- **Menu:** Settings → Radio Set → Audio → PF Beep (item 18)
+- **Options:** `Silent`, `Beep`
+- **Default:** `Not yet documented`
+- **Storage:** `Not yet documented`
 
 ## Knob select
 
@@ -59,10 +57,16 @@ the idle screen. Each one is set on its own, and both can step through
 the same thing: for example, the up/down keys for channels and the
 knob for talkgroups.
 
-- **Menu:** Settings → Radio Set → Keys → Knob and Up/Down (the last
-  two items in the Keys menu)
-- **Options:** zone, channel or contact (the exact wording on the
-  radio is `Not yet documented`)
+![The Keys menu, items 16 to 20: 7 Long, 8 Long, 9 Long, Knob and
+Up/Down](./images/keys-menu-knob.png)
+
+![The Knob list, with Channel selected](./images/keys-knob.png)
+
+![The Up/Down list, with Zone selected](./images/keys-up-down.png)
+
+- **Menu:** Settings → Radio Set → Keys → Knob, and Settings → Radio
+  Set → Keys → Up/Down (items 19 and 20, the last two in the Keys menu)
+- **Options:** `Zone`, `Channel`, `Contact`
 - **Default:** `Not yet documented`
 - **Storage:** `Not yet documented`
 
@@ -81,13 +85,18 @@ this.
 
 ## Menu navigation and entry
 
-> [!NOTE]
-> These come from the changelog for build `REFW-20260919-155710`. Their
-> exact behavior has **not yet been documented** from a radio.
+In menus and lists, **PF1** is page up and **PF2** is page down: each
+press moves a whole screen, 5 items, instead of one line.
+This works in long lists such as Chan Set and the Keys menu.
 
-- **PF1+2 scrolls faster** up and down through menus.
-- **Jump by value.** Typing an option's value on the keypad jumps
-  straight to that option.
+In a list of option values, typing a value on the keypad jumps straight
+to that option.
+
+> [!NOTE]
+> The rest of this section comes from the changelog for build
+> `REFW-20260919-155710`. Its exact behavior has **not yet been
+> documented** from a radio.
+
 - **DCS codes can be typed in directly** instead of scrolled to.
 
 PF1 is also handled better when backing out of editors and when

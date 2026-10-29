@@ -23,7 +23,7 @@ writing a codeplug never disturbs the log.
 - **Default:** `Off`
 - **Storage:** reFW settings block `0x02E80000` + `0x11`, bit 2, outside
   the codeplug (see
-  [settings-storage.md](settings-storage.md#0x11-extras-flags-byte-2)).
+  [settings-storage.md](settings-storage.md#0x11-flags-byte-2)).
   A codeplug write does not set it.
 
 ## Downloading
