@@ -1,0 +1,41 @@
+---
+// Starlight's page title, with a button that saves the page as a PDF
+// through the browser's print dialog. Starlight's print styles already
+// drop the sidebar and force light colours.
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+---
+
+<div class="page-title">
+	<Default />
+	<button type="button" class="save-pdf print:hidden" data-save-pdf>Save as PDF</button>
+</div>
+
+<script>
+	for (const button of document.querySelectorAll('[data-save-pdf]')) {
+		button.addEventListener('click', () => window.print());
+	}
+</script>
+
+<style>
+	.page-title {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.5rem 1rem;
+	}
+	.save-pdf {
+		padding: 0.25rem 0.75rem;
+		font: inherit;
+		font-size: var(--sl-text-sm);
+		color: var(--sl-color-gray-2);
+		background: none;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.5rem;
+		cursor: pointer;
+	}
+	.save-pdf:hover {
+		color: var(--sl-color-white);
+		border-color: var(--sl-color-gray-3);
+	}
+</style>

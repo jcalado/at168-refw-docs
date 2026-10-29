@@ -40,6 +40,7 @@ export default defineConfig({
 			sidebar,
 			components: {
 				Head: './src/components/Head.astro',
+				PageTitle: './src/components/PageTitle.astro',
 			},
 		}),
 	],
