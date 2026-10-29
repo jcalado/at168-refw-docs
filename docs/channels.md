@@ -158,4 +158,4 @@ future. A read followed by a write loses reFW's per-channel settings
 ([promiscuous](#per-channel-promiscuous) and [squelch](#squelch)),
 because reFW keeps them in the channel extension records (see
 [settings-storage.md](settings-storage.md#per-channel-settings)).
-reFW's Extras settings live separately and are not affected.
+reFW's Extra settings live separately and are not affected.

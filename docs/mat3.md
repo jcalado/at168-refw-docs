@@ -19,7 +19,7 @@ nothing is stored on the radio.
 
 ## Getting started
 
-1. On the radio, set **Settings → Extras → MAT3** to `Enabled`, or
+1. On the radio, set **Settings → Extra → MAT3** to `Enabled`, or
    press a key assigned to the [MAT3 function](#mat3-key-function).
    The setting is saved, so it stays enabled until you turn it off.
 2. Connect your radio to your Android device using the USB-C cable.
@@ -35,14 +35,14 @@ packets](./images/mat3-monitor.png)
 > [!TIP]
 > **Conserving phone battery:** When connected over USB-C, Android phones
 > often attempt to charge the radio. To avoid draining the phone, set
-> [USB charge](power.md#usb-charge) to `Off` in the Extras menu.
+> [USB charge](power.md#usb-charge) to `Off` in the Extra menu.
 
 While MAT3 is enabled, the stream shares the USB port with programming,
 so a CPS may need a retry or two to connect.
 
 ## MAT3 setting
 
-- **Menu:** Settings → Extras → MAT3
+- **Menu:** Settings → Extra → MAT3
 - **Options:** `Disabled`, `Enabled`
 - **Default:** `Disabled`
 - **Storage:** reFW settings block `0x02E80000` + `0x11`, bit 3 (`0` =
@@ -54,7 +54,7 @@ so a CPS may need a retry or two to connect.
 
 Flips the MAT3 setting between enabled and disabled from a key, and
 shows `MAT3 Enabled` or `MAT3 Disabled` to confirm. It changes the same
-stored setting as Settings → Extras → MAT3, so the choice sticks. Useful
+stored setting as Settings → Extra → MAT3, so the choice sticks. Useful
 to assign to a side key if you use MAT3 often.
 
 - **Menu:** a [key function](keys.md#assigning-functions-to-keys),

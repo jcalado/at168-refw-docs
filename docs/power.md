@@ -45,7 +45,7 @@ laptop or phone for long sessions (such as [packet
 logging](packet-log.md) or running [MAT3](mat3.md)) to avoid draining
 the host battery.
 
-- **Menu:** Settings → Extras → USB charge
+- **Menu:** Settings → Extra → USB charge
 - **Options:** `On`, `Off`
 - **Default:** `On`
 - **Storage:** reFW settings block `0x02E80000` + `0x11`, bit 1. Note

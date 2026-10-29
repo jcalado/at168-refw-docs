@@ -7,7 +7,7 @@ tableOfContents: false
 reFW builds directly on top of AnyTone's factory firmware. These pages
 cover everything it changes, grouped by what you're doing with the
 radio: reFW adds new options to the stock **Settings → Radio Set**
-menus and its own **Settings → Extras** menu, adds key functions,
+menus and its own **Settings → Extra** menu, adds key functions,
 stores some settings per channel, renames labels and fixes bugs across
 the rest of the radio.
 
@@ -18,7 +18,7 @@ name, and the battery shown as a voltage in the top corner](./images/radio-home-
 The home screen on reFW, with the battery shown as a voltage by
 [Bat icon](power.md#bat-icon).
 
-Standing at the radio looking at a menu? The [Extras
+Standing at the radio looking at a menu? The [Extra
 menu](extras-menu.md) and [Shortcut functions](shortcuts.md) pages list
 every item and link to where it is described.
 
@@ -53,7 +53,7 @@ every item and link to where it is described.
 <!-- pages: Reference -->
 | Page | Description |
 | --- | --- |
-| [Extras menu](extras-menu.md) | Every item in Settings → Extras, with its options and default, linked to where it is described |
+| [Extra menu](extras-menu.md) | Every item in Settings → Extra, with its options and default, linked to where it is described |
 | [Shortcut functions](shortcuts.md) | Every function reFW adds to the assignable key list, linked to where it is described |
 | [Renamed labels](renamed-menus.md) | Stock menus, functions and labels that reFW renames or rewords |
 | [Bug fixes](bug-fixes.md) | Stock firmware bugs that reFW fixes |

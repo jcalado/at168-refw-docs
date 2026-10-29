@@ -6,7 +6,7 @@ Community documentation for **reFW**, a custom firmware for the
 reFW builds directly on top of AnyTone's factory firmware. These pages
 cover everything it changes, grouped by what you're doing with the
 radio: reFW adds new options to the stock **Settings → Radio Set**
-menus and its own **Settings → Extras** menu, adds key functions,
+menus and its own **Settings → Extra** menu, adds key functions,
 stores some settings per channel, renames labels and fixes bugs across
 the rest of the radio.
 
@@ -48,7 +48,7 @@ The same pages are published as a searchable site at
 <!-- pages: Reference -->
 | Page | Description |
 | --- | --- |
-| [docs/extras-menu.md](docs/extras-menu.md) | Every item in Settings → Extras, with its options and default, linked to where it is described |
+| [docs/extras-menu.md](docs/extras-menu.md) | Every item in Settings → Extra, with its options and default, linked to where it is described |
 | [docs/shortcuts.md](docs/shortcuts.md) | Every function reFW adds to the assignable key list, linked to where it is described |
 | [docs/renamed-menus.md](docs/renamed-menus.md) | Stock menus, functions and labels that reFW renames or rewords |
 | [docs/bug-fixes.md](docs/bug-fixes.md) | Stock firmware bugs that reFW fixes |

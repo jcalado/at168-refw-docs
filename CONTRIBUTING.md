@@ -4,9 +4,9 @@
 
 One page per part of the radio (display, keys, calls, …), in `docs/`,
 covering everything reFW changes there wherever it lives in the menus.
-Markdown, wrapped at ~72 columns, no HTML. The [Extras
+Markdown, wrapped at ~72 columns, no HTML. The [Extra
 menu](docs/extras-menu.md) and [Shortcut functions](docs/shortcuts.md)
-pages are lookup tables: when you document a new Extras item or key
+pages are lookup tables: when you document a new Extra item or key
 function, add a row there that links to its section.
 
 To add a page, list it in the `sidebar` in `src/pages.mjs`, then run
@@ -35,7 +35,7 @@ asides: `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]` or
 
 Each documented setting carries:
 
-- **Menu**: where to find it, as in `Settings → Extras → Batt view`,
+- **Menu**: where to find it, as in `Settings → Extra → Batt view`,
   or the function code for a key function
 - **Options**: exactly the words the radio's own menu shows
 - **Default**: what a fresh radio does

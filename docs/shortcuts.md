@@ -28,7 +28,7 @@ The functions are mostly **toggles**: one press flips the setting,
 another press flips it back. Most act on the radio's live state rather
 than the codeplug, so the current channel behaves differently without
 you having to go in and edit it. MAT3 is the exception: it changes the
-stored Extras setting. RX Group and Copy 2 VFO aren't toggles: one
+stored Extra setting. RX Group and Copy 2 VFO aren't toggles: one
 opens a list, the other copies the channel.
 
 ## Storage

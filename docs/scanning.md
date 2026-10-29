@@ -39,7 +39,7 @@ menu, skipping the power-on button combination needed to reach the
 factory engineering menu. The list offers 18 options: **Mode 00**
 through **Mode 17**.
 
-- **Menu:** Settings → Extras → Band mode
+- **Menu:** Settings → Extra → Band mode
 - **Options:** `Mode 00` … `Mode 17`
 - **Default:** Whatever mode your radio was provisioned with from the
   factory

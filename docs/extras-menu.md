@@ -1,14 +1,14 @@
 ---
-title: "Extras menu"
-description: "Every item in Settings → Extras, with its options and default, linked to where it is described"
+title: "Extra menu"
+description: "Every item in Settings → Extra, with its options and default, linked to where it is described"
 ---
 
 > [!NOTE]
-> **Work in progress.** The items in the Extras menu are still being
+> **Work in progress.** The items in the Extra menu are still being
 > developed, and can change at any time: items may be added, renamed,
 > reordered or removed between reFW builds.
 
-**Settings → Extras** is reFW's own menu. This page lists its 4 items
+**Settings → Extra** is reFW's own menu. This page lists its 4 items
 in menu order. Each links to where it is described, alongside related
 changes.
 
