@@ -13,6 +13,7 @@
     "@astrojs/markdown-satteri": "^0.4.1",
     "@astrojs/starlight": "^0.42.2",
     "astro": "^7.3.3",
+    "mermaid": "^12.2.0",
     "satteri": "^0.10.5",
     "sharp": "^0.35.4",
     "starlight-links-validator": "^0.26.0"

@@ -5,6 +5,7 @@ import starlightLinksValidator from 'starlight-links-validator';
 import { satteri } from '@astrojs/markdown-satteri';
 import githubAlerts from './src/github-alerts.mjs';
 import mdLinks from './src/md-links.mjs';
+import mermaid from './src/mermaid.mjs';
 import validatorSlugs from './src/validator-slugs.mjs';
 import { sidebar } from './src/pages.mjs';
 
@@ -14,7 +15,7 @@ export default defineConfig({
 	site: 'https://jcalado.com',
 	base,
 	markdown: {
-		processor: satteri({ mdastPlugins: [mdLinks({ base }), githubAlerts(), validatorSlugs()] }),
+		processor: satteri({ mdastPlugins: [mdLinks({ base }), githubAlerts(), mermaid(), validatorSlugs()] }),
 	},
 	integrations: [
 		starlight({
@@ -37,6 +38,9 @@ export default defineConfig({
 			markdown: { processedDirs: ['./docs'] },
 			plugins: [starlightLinksValidator()],
 			sidebar,
+			components: {
+				Head: './src/components/Head.astro',
+			},
 		}),
 	],
 });

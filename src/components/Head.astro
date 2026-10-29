@@ -1,0 +1,72 @@
+---
+// Starlight's own head, plus the script that draws ```mermaid blocks
+// (see src/mermaid.mjs). Mermaid is only loaded on pages that have one.
+import Default from '@astrojs/starlight/components/Head.astro';
+---
+
+<Default><slot /></Default>
+
+<script>
+	const diagrams = document.querySelectorAll<HTMLElement>('pre.mermaid');
+
+	if (diagrams.length) {
+		const { default: mermaid } = await import('mermaid');
+		// Plain boxes; the colours come from the styles below. SVG labels, in
+		// the page's own font: HTML labels pick up the site's CSS after
+		// Mermaid has sized the boxes, and get cut off.
+		mermaid.initialize({
+			startOnLoad: false,
+			theme: 'base',
+			look: 'classic',
+			htmlLabels: false,
+			fontFamily: getComputedStyle(document.body).fontFamily,
+		});
+		await mermaid.run({ nodes: diagrams });
+	}
+</script>
+
+<style is:global>
+	pre.mermaid {
+		display: flex;
+		justify-content: center;
+		margin-block: 1.5rem;
+		background: none;
+		border: none;
+	}
+	/*
+	 * Colour diagrams with the site's variables rather than colours baked in
+	 * by Mermaid, so they follow the light/dark toggle and print in light
+	 * colours. Mermaid's own styles are scoped by id, hence !important.
+	 */
+	pre.mermaid .node :is(rect, polygon, circle, path) {
+		fill: var(--sl-color-bg-nav) !important;
+		stroke: var(--sl-color-gray-4) !important;
+		filter: none !important;
+	}
+	pre.mermaid .node rect {
+		rx: 6px;
+		ry: 6px;
+	}
+	pre.mermaid text,
+	pre.mermaid tspan {
+		fill: var(--sl-color-white) !important;
+	}
+	pre.mermaid .flowchart-link {
+		stroke: var(--sl-color-gray-3) !important;
+	}
+	pre.mermaid marker path {
+		fill: var(--sl-color-gray-3) !important;
+		stroke: var(--sl-color-gray-3) !important;
+	}
+	/* Small enough in print to share a page with the text around it. */
+	@media print {
+		pre.mermaid svg {
+			max-height: 12cm;
+		}
+	}
+	/* Keep connector lines from running through edge labels. */
+	pre.mermaid .edgeLabel rect.background {
+		fill: var(--sl-color-bg) !important;
+		opacity: 1 !important;
+	}
+</style>
