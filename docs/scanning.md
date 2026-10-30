@@ -47,6 +47,14 @@ through **Mode 17**. The list opens on the radio's current mode. Its
 item numbers run one ahead of the mode numbers: item 1 is Mode 00, so
 typing `4` highlights Mode 03.
 
+> [!CAUTION]
+> Codeplugs are hardcoded to the band mode the radio was set to when the
+> codeplug was created. If you change band mode, codeplugs created for
+> another band mode will not write to the radio.
+
+> [!NOTE]
+> If you wish to "wideband" the radio, choose Mode 11.
+
 ![The Band Mode list, opened on Mode 03](./images/band-mode-list.png)
 
 - **Menu:** Settings → Extra → Band Mode (item 1)
